@@ -1,0 +1,3129 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#12382b">
+<title>MEDIKA | Premium Pharmacy & Wellness</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --green:#173b2d;
+    --deep:#0c261c;
+    --green2:#315c45;
+    --gold:#b99a59;
+    --gold-light:#d9c18c;
+    --cream:#f7f5ef;
+    --white:#fff;
+    --text:#26372e;
+    --muted:#89938b;
+    --line:#e9e7df;
+    --shadow:0 15px 40px rgba(15,43,29,.09);
+    --transition:.3s ease;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+body.lock-scroll{overflow:hidden}
+button,input,select,textarea{font-family:inherit}
+button{cursor:pointer}
+a{text-decoration:none;color:inherit}
+img{display:block;width:100%;object-fit:cover}
+.container{width:min(1240px,92%);margin:auto}
+.section{padding:82px 0}
+.section-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);font-weight:700}
+.section-title{font-family:'Playfair Display',serif;color:var(--green);font-weight:500;font-size:clamp(30px,4vw,44px);margin-top:12px}
+.section-desc{color:var(--muted);font-size:12px;line-height:1.9;margin-top:12px;max-width:580px}
+.section-head{margin-bottom:32px}
+.btn{border:0;padding:14px 22px;display:inline-flex;align-items:center;justify-content:center;gap:9px;font-size:10px;font-weight:700;letter-spacing:.7px;transition:var(--transition);border-radius:3px}
+.btn-green{background:var(--green);color:white}
+.btn-green:hover{background:var(--green2);transform:translateY(-2px)}
+.btn-gold{background:var(--gold);color:var(--deep)}
+.btn-gold:hover{background:var(--gold-light)}
+.btn-outline-white{border:1px solid #ffffff80;background:transparent;color:white}
+.btn-outline-white:hover{background:white;color:var(--green)}
+.btn-outline{background:transparent;border:1px solid var(--line);color:var(--green)}
+.btn-outline:hover{border-color:var(--gold);color:var(--gold)}
+
+/* TOP BAR */
+.topbar{background:var(--deep);color:#e5e8df;text-align:center;padding:10px;font-size:9px;letter-spacing:1.5px}
+.topbar span{color:var(--gold-light);font-weight:700}
+
+/* HEADER */
+.header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.navbar{height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:11px;flex-shrink:0}
+.brand-symbol{width:42px;height:42px;border:1px solid var(--gold);border-radius:50%;display:grid;place-items:center;color:var(--gold);font-size:23px}
+.brand-title{font-family:'Playfair Display',serif;color:var(--green);font-size:26px;letter-spacing:2px}
+.brand-subtitle{font-size:8px;color:var(--gold);letter-spacing:2.5px;margin-top:3px}
+.nav-links{display:flex;align-items:center;gap:27px;list-style:none}
+.nav-links a{font-size:11px;color:#59665d;transition:var(--transition)}
+.nav-links a:hover{color:var(--gold)}
+.nav-actions{display:flex;align-items:center;gap:10px}
+.nav-icon{position:relative;border:0;background:transparent;color:var(--green);font-size:19px;padding:8px}
+.nav-icon:hover{color:var(--gold)}
+.cart-count{position:absolute;top:0;right:-2px;background:var(--gold);color:var(--deep);font-size:9px;font-weight:700;min-width:17px;height:17px;border-radius:30px;display:grid;place-items:center;padding:0 4px}
+.account-button{border:0;background:var(--green);color:white;padding:12px 18px;font-size:10px;font-weight:700;border-radius:3px;transition:var(--transition)}
+.account-button:hover{background:var(--gold);color:var(--deep)}
+.mobile-toggle{display:none;border:0;background:none;color:var(--green);font-size:23px}
+
+/* HERO */
+.hero{min-height:600px;position:relative;display:flex;align-items:center;background:var(--deep);overflow:hidden}
+.hero-image{position:absolute;inset:0}
+.hero-image img{height:100%;object-position:center 40%;filter:brightness(.65)}
+.hero-image:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,31,21,.97) 0%,rgba(8,31,21,.85) 43%,rgba(8,31,21,.2) 100%)}
+.hero-content{position:relative;z-index:2;padding:85px 0}
+.hero-copy{max-width:610px}
+.hero-kicker{display:flex;align-items:center;gap:12px;color:var(--gold-light);font-size:10px;letter-spacing:3px;text-transform:uppercase}
+.hero-kicker:before{content:"";width:35px;height:1px;background:var(--gold)}
+.hero h1{font-family:'Playfair Display',serif;color:white;font-size:clamp(45px,6vw,76px);font-weight:400;line-height:1.1;margin-top:24px}
+.hero h1 em{font-style:normal;color:var(--gold-light)}
+.hero-description{font-size:13px;line-height:1.9;color:#d0d8d0;max-width:440px;margin-top:23px}
+.hero-buttons{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.hero-highlights{display:flex;gap:28px;flex-wrap:wrap;margin-top:48px}
+.hero-highlight{display:flex;align-items:center;gap:10px;color:#e3e8df;font-size:10px}
+.hero-highlight-icon{font-size:20px;color:var(--gold-light)}
+.hero-highlight small{display:block;color:#aab8ac;font-size:9px;margin-top:4px}
+
+/* TRUST BAR */
+.trustbar{background:white;border-bottom:1px solid var(--line)}
+.trust-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+.trust-item{display:flex;align-items:center;gap:13px;padding:23px 16px;border-right:1px solid var(--line)}
+.trust-item:first-child{border-left:1px solid var(--line)}
+.trust-icon{font-size:23px;color:var(--gold)}
+.trust-item strong{display:block;color:var(--green);font-size:10px}
+.trust-item small{display:block;color:var(--muted);font-size:9px;margin-top:4px}
+
+/* CATEGORY */
+.category-section{padding:78px 0 55px}
+.category-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:17px}
+.category-card{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden;cursor:pointer;transition:var(--transition)}
+.category-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--gold)}
+.category-photo{height:175px;overflow:hidden;background:#e9e9e2}
+.category-photo img{height:100%;transition:transform .5s}
+.category-card:hover .category-photo img{transform:scale(1.06)}
+.category-info{padding:19px}
+.category-info h3{font-family:'Playfair Display',serif;color:var(--green);font-size:19px;font-weight:500}
+.category-info p{font-size:10px;color:var(--muted);line-height:1.7;margin-top:7px}
+.category-link{display:block;color:var(--gold);font-size:9px;font-weight:700;margin-top:15px;letter-spacing:.5px}
+
+/* PROMO BANNERS */
+.promo-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.promo-card{position:relative;min-height:230px;overflow:hidden;border-radius:8px;display:flex;align-items:center;padding:30px}
+.promo-card img{position:absolute;inset:0;height:100%;width:100%;object-fit:cover}
+.promo-card:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,35,23,.94),rgba(10,35,23,.3))}
+.promo-card.promo-light:after{background:linear-gradient(90deg,rgba(28,43,32,.88),rgba(28,43,32,.25))}
+.promo-content{position:relative;z-index:2;color:white;max-width:300px}
+.promo-content small{font-size:9px;letter-spacing:2px;color:var(--gold-light);font-weight:700}
+.promo-content h3{font-family:'Playfair Display',serif;font-size:27px;font-weight:500;line-height:1.25;margin-top:10px}
+.promo-content p{font-size:10px;line-height:1.8;color:#e0e5dc;margin-top:9px}
+.promo-content .btn{margin-top:17px}
+
+/* PRODUCT CATALOG */
+.products-section{padding:82px 0}
+.product-toolbar{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;margin-bottom:27px}
+.search-box{width:min(350px,100%);background:white;border:1px solid var(--line);display:flex;align-items:center;padding:0 13px;border-radius:4px}
+.search-box span{color:var(--muted);font-size:17px}
+.search-box input{border:0;outline:0;background:transparent;padding:14px 10px;width:100%;font-size:11px;color:var(--text)}
+.filter-list{display:flex;gap:8px;flex-wrap:wrap}
+.filter-chip{background:white;border:1px solid var(--line);padding:10px 14px;border-radius:30px;font-size:9px;color:#667269;transition:var(--transition)}
+.filter-chip:hover,.filter-chip.active{background:var(--green);border-color:var(--green);color:white}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:19px}
+.product-card{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden;position:relative;transition:var(--transition)}
+.product-card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.product-image-wrap{height:230px;position:relative;background:#eeeee8;overflow:hidden}
+.product-image-wrap img{height:100%;transition:transform .5s}
+.product-card:hover .product-image-wrap img{transform:scale(1.05)}
+.product-tag{position:absolute;top:12px;left:12px;background:var(--green);color:white;font-size:8px;padding:6px 9px;border-radius:2px}
+.product-wishlist{position:absolute;right:12px;top:12px;background:white;border:0;border-radius:50%;width:32px;height:32px;color:#78847a;font-size:16px}
+.product-wishlist:hover{color:#c66b6b}
+.product-info{padding:16px}
+.product-category{font-size:8px;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold)}
+.product-name{font-family:'Playfair Display',serif;font-size:17px;color:var(--green);font-weight:500;margin-top:8px}
+.product-description{font-size:9px;line-height:1.7;color:var(--muted);margin-top:7px;min-height:31px}
+.product-rating{font-size:10px;color:#c39c55;margin-top:9px}
+.product-price{font-size:14px;color:var(--green);font-weight:700;margin-top:12px}
+.product-old-price{font-size:9px;color:#a5aaa4;text-decoration:line-through;font-weight:400;margin-left:5px}
+.product-bottom{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:13px}
+.product-stock{font-size:9px;color:var(--muted)}
+.product-add{height:35px;width:35px;border:0;border-radius:3px;background:var(--green);color:white;font-size:18px;transition:var(--transition)}
+.product-add:hover{background:var(--gold);color:var(--deep)}
+.product-see-all{text-align:center;margin-top:35px}
+.no-products{grid-column:1/-1;text-align:center;color:var(--muted);padding:35px}
+
+/* WELLNESS BANNER */
+.wellness-banner{background:var(--green);position:relative;overflow:hidden;color:white;padding:65px 0}
+.wellness-inner{display:flex;align-items:center;justify-content:space-between;gap:30px;position:relative;z-index:2}
+.wellness-inner h2{font-family:'Playfair Display',serif;font-size:clamp(29px,4vw,43px);font-weight:400;line-height:1.3}
+.wellness-inner h2 em{color:var(--gold-light);font-style:normal}
+.wellness-inner p{font-size:11px;line-height:1.9;color:#cbd5cb;margin-top:12px;max-width:510px}
+.wellness-banner:after{content:"✳";position:absolute;right:7%;top:-75px;font-size:230px;color:white;opacity:.035}
+
+/* SERVICES */
+.services-section{padding:80px 0}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.service-card{background:white;border:1px solid var(--line);border-radius:8px;overflow:hidden;transition:var(--transition)}
+.service-card:hover{transform:translateY(-4px);box-shadow:var(--shadow)}
+.service-photo{height:175px}
+.service-photo img{height:100%}
+.service-info{padding:23px}
+.service-info h3{font-family:'Playfair Display',serif;color:var(--green);font-size:20px;font-weight:500}
+.service-info p{font-size:10px;line-height:1.8;color:var(--muted);margin-top:9px}
+.service-info a{display:inline-block;color:var(--gold);font-size:9px;font-weight:700;margin-top:16px}
+
+/* FOOTER */
+.footer{background:var(--deep);color:#d7ded5;padding:62px 0 0}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:35px;padding-bottom:43px}
+.footer .brand-title{color:white}
+.footer-about{font-size:10px;line-height:1.9;color:#aab6aa;margin-top:19px;max-width:310px}
+.footer-col h4{font-family:'Playfair Display',serif;color:white;font-weight:500;font-size:17px;margin-bottom:19px}
+.footer-col ul{list-style:none}
+.footer-col li{margin-bottom:12px}
+.footer-col a,.footer-contact{font-size:10px;line-height:1.8;color:#aab6aa}
+.footer-col a:hover{color:var(--gold-light)}
+.footer-contact{margin-bottom:10px}
+.footer-bottom{border-top:1px solid #ffffff15;padding:19px 0;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:#8d9b8f;font-size:9px}
+
+/* RESPONSIVE */
+@media(max-width:1000px){
+    .nav-links{gap:15px}
+    .product-grid{grid-template-columns:repeat(3,1fr)}
+    .category-grid{grid-template-columns:repeat(2,1fr)}
+    .trust-grid{grid-template-columns:repeat(2,1fr)}
+    .trust-item:nth-child(3){border-left:1px solid var(--line)}
+    .footer-grid{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:760px){
+    .navbar{height:70px}
+    .mobile-toggle{display:block}
+    .nav-links{display:none;position:absolute;top:70px;left:0;right:0;background:white;padding:22px 5%;box-shadow:var(--shadow);flex-direction:column;align-items:flex-start;gap:20px}
+    .nav-links.mobile-open{display:flex}
+    .brand-title{font-size:23px}
+    .brand-symbol{width:37px;height:37px}
+    .nav-actions{gap:5px}
+    .account-button{padding:10px 12px;font-size:9px}
+    .hero{min-height:530px}
+    .hero-content{padding:65px 0}
+    .hero h1{font-size:48px}
+    .hero-highlights{gap:18px}
+    .category-photo{height:150px}
+    .product-grid{grid-template-columns:repeat(2,1fr);gap:11px}
+    .product-image-wrap{height:180px}
+    .product-info{padding:12px}
+    .product-name{font-size:15px}
+    .promo-grid{grid-template-columns:1fr}
+    .wellness-inner{align-items:flex-start;flex-direction:column}
+    .services-grid{grid-template-columns:1fr}
+    .footer-grid{gap:28px}
+}
+@media(max-width:430px){
+    .topbar{font-size:8px;letter-spacing:.8px}
+    .hero h1{font-size:41px}
+    .hero-description{font-size:11px}
+    .hero-buttons .btn{padding:12px 14px}
+    .hero-highlights{gap:13px}
+    .hero-highlight{font-size:9px}
+    .trust-item{padding:17px 10px}
+    .trust-item strong{font-size:9px}
+    .trust-item small{font-size:8px}
+    .category-grid{gap:10px}
+    .category-info{padding:13px}
+    .category-info h3{font-size:16px}
+    .category-info p{font-size:9px}
+    .category-photo{height:125px}
+    .product-grid{gap:9px}
+    .product-image-wrap{height:150px}
+    .product-info{padding:10px}
+    .product-name{font-size:14px}
+    .product-description{font-size:8px}
+    .product-price{font-size:12px}
+    .product-add{width:31px;height:31px}
+    .footer-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP ANNOUNCEMENT -->
+<div class="topbar">
+    YOUR HEALTH, OUR PRIORITY — <span>WELCOME TO MEDIKA PHARMACY</span>
+</div>
+
+<!-- NAVIGATION -->
+<header class="header">
+    <div class="container navbar">
+
+        <a href="#home" class="brand">
+            <div class="brand-symbol">✚</div>
+            <div>
+                <div class="brand-title">MEDIKA</div>
+                <div class="brand-subtitle">PHARMACY & WELLNESS</div>
+            </div>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#categories">Kategori</a></li>
+            <li><a href="#products">Produk</a></li>
+            <li><a href="#services">Layanan</a></li>
+            <li><a href="#footer">Tentang Kami</a></li>
+        </ul>
+
+        <div class="nav-actions">
+            <button class="nav-icon" onclick="openWishlist()" title="Wishlist">♡</button>
+
+            <button class="nav-icon" onclick="openCart()" title="Keranjang">
+                🛒 <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+            <button class="account-button" id="navAccountButton" onclick="openMedikaAccess()">
+                Masuk
+            </button>
+
+            <button class="mobile-toggle" onclick="toggleMobileMenu()" aria-label="Buka menu">☰</button>
+        </div>
+
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=2000&q=90" alt="Suasana layanan kesehatan profesional">
+    </div>
+
+    <div class="container hero-content">
+        <div class="hero-copy">
+            <div class="hero-kicker">A better way to care</div>
+
+            <h1>Your Everyday<br><em>Wellness Partner.</em></h1>
+
+            <p class="hero-description">
+                Temukan kebutuhan kesehatan, vitamin, dan perawatan diri
+                dalam satu tempat. MEDIKA menghadirkan pengalaman belanja
+                yang nyaman, praktis, dan penuh kepedulian.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#products" class="btn btn-gold">BELANJA SEKARANG ↗</a>
+                <a href="#services" class="btn btn-outline-white">JELAJAHI LAYANAN</a>
+            </div>
+
+            <div class="hero-highlights">
+                <div class="hero-highlight">
+                    <span class="hero-highlight-icon">✳</span>
+                    <div>Curated Products<small>Pilihan produk terkurasi</small></div>
+                </div>
+                <div class="hero-highlight">
+                    <span class="hero-highlight-icon">♡</span>
+                    <div>Personal Care<small>Peduli setiap kebutuhan</small></div>
+                </div>
+                <div class="hero-highlight">
+                    <span class="hero-highlight-icon">⌂</span>
+                    <div>Easy Shopping<small>Belanja lebih praktis</small></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TRUST -->
+<section class="trustbar">
+    <div class="container trust-grid">
+        <div class="trust-item">
+            <div class="trust-icon">✳</div>
+            <div><strong>Produk Terpilih</strong><small>Katalog pilihan MEDIKA</small></div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">♡</div>
+            <div><strong>Pelayanan Ramah</strong><small>Mengutamakan kenyamanan</small></div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">♧</div>
+            <div><strong>Belanja Praktis</strong><small>Proses mudah dan sederhana</small></div>
+        </div>
+        <div class="trust-item">
+            <div class="trust-icon">⌂</div>
+            <div><strong>Order Tracking</strong><small>Pantau status pesanan</small></div>
+        </div>
+    </div>
+</section>
+
+<!-- CATEGORIES -->
+<section class="category-section" id="categories">
+    <div class="container">
+
+        <div class="section-head">
+            <div class="section-label">Explore our collection</div>
+            <h2 class="section-title">Shop by Category</h2>
+            <p class="section-desc">
+                Temukan berbagai pilihan kebutuhan kesehatan dan perawatan
+                melalui kategori produk MEDIKA.
+            </p>
+        </div>
+
+        <div class="category-grid">
+
+            <div class="category-card" onclick="filterProducts('Obat Bebas')">
+                <div class="category-photo">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=700&q=85" alt="Produk obat dan farmasi" loading="lazy">
+                </div>
+                <div class="category-info">
+                    <h3>Obat Bebas</h3>
+                    <p>Kebutuhan kesehatan sehari-hari.</p>
+                    <span class="category-link">EXPLORE CATEGORY ↗</span>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="filterProducts('Vitamin')">
+                <div class="category-photo">
+                    <img src="https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=85" alt="Produk perawatan dan suplemen" loading="lazy">
+                </div>
+                <div class="category-info">
+                    <h3>Vitamin & Suplemen</h3>
+                    <p>Pelengkap kebutuhan nutrisi.</p>
+                    <span class="category-link">EXPLORE CATEGORY ↗</span>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="filterProducts('Perawatan')">
+                <div class="category-photo">
+                    <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85" alt="Produk perawatan kulit" loading="lazy">
+                </div>
+                <div class="category-info">
+                    <h3>Personal Care</h3>
+                    <p>Perawatan diri dan kebersihan.</p>
+                    <span class="category-link">EXPLORE CATEGORY ↗</span>
+                </div>
+            </div>
+
+            <div class="category-card" onclick="filterProducts('Alat Kesehatan')">
+                <div class="category-photo">
+                    <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=85" alt="Peralatan kesehatan" loading="lazy">
+                </div>
+                <div class="category-info">
+                    <h3>Alat Kesehatan</h3>
+                    <p>Peralatan penunjang kesehatan.</p>
+                    <span class="category-link">EXPLORE CATEGORY ↗</span>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- PROMOTION BANNERS -->
+        <div class="promo-grid">
+
+            <div class="promo-card">
+                <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=1000&q=85" alt="Produk perawatan diri" loading="lazy">
+                <div class="promo-content">
+                    <small>MEDIKA MEMBERSHIP</small>
+                    <h3>Care More.<br>Earn More.</h3>
+                    <p>Kumpulkan poin dari transaksi dan nikmati keuntungan member.</p>
+                    <button class="btn btn-gold" onclick="openMedikaAccess()">JOIN MEMBERSHIP ↗</button>
+                </div>
+            </div>
+
+            <div class="promo-card promo-light">
+                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1000&q=85" alt="Pelayanan kesehatan" loading="lazy">
+                <div class="promo-content">
+                    <small>WELLNESS STARTS HERE</small>
+                    <h3>Little Care.<br>Better Living.</h3>
+                    <p>Mulai perjalanan hidup sehat dengan pilihan yang tepat.</p>
+                    <a href="#products" class="btn btn-gold">EXPLORE PRODUCTS ↗</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products-section" id="products">
+    <div class="container">
+
+        <div class="section-head">
+            <div class="section-label">Our curated selection</div>
+            <h2 class="section-title">Featured Products</h2>
+            <p class="section-desc">
+                Jelajahi koleksi produk MEDIKA. Setiap produk akan dilengkapi
+                foto, harga, kategori, informasi stok, dan detail produk.
+            </p>
+        </div>
+
+        <div class="product-toolbar">
+
+            <div class="search-box">
+                <span>⌕</span>
+                <input type="search" id="productSearch"
+                    placeholder="Cari nama produk..."
+                    oninput="searchProducts(this.value)">
+            </div>
+
+            <div class="filter-list" id="productFilters">
+                <button class="filter-chip active" onclick="filterProducts('Semua',this)">Semua</button>
+                <button class="filter-chip" onclick="filterProducts('Obat Bebas',this)">Obat Bebas</button>
+                <button class="filter-chip" onclick="filterProducts('Vitamin',this)">Vitamin</button>
+                <button class="filter-chip" onclick="filterProducts('Perawatan',this)">Personal Care</button>
+                <button class="filter-chip" onclick="filterProducts('Alat Kesehatan',this)">Alat Kesehatan</button>
+            </div>
+        </div>
+
+        <!-- PART 2 WILL CONNECT REAL PRODUCT DATA TO THIS GRID -->
+        <div class="product-grid" id="productGrid">
+
+            <article class="product-card">
+                <div class="product-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=85" alt="Produk vitamin" loading="lazy">
+                    <span class="product-tag">FEATURED</span>
+                    <button class="product-wishlist" onclick="openMedikaAccess()" aria-label="Wishlist">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Vitamin & Suplemen</div>
+                    <h3 class="product-name">Vitamin Collection</h3>
+                    <p class="product-description">Pilihan suplemen untuk melengkapi kebutuhan nutrisi.</p>
+                    <div class="product-rating">★★★★★ <span style="color:#9aa39b">(Pilihan)</span></div>
+                    <div class="product-price">Lihat Detail Produk</div>
+                    <div class="product-bottom">
+                        <span class="product-stock">Katalog produk</span>
+                        <button class="product-add" onclick="openMedikaAccess()" aria-label="Lihat produk">↗</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=85" alt="Produk skincare" loading="lazy">
+                    <span class="product-tag">PERSONAL CARE</span>
+                    <button class="product-wishlist" onclick="openMedikaAccess()" aria-label="Wishlist">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Personal Care</div>
+                    <h3 class="product-name">Skin Care Essentials</h3>
+                    <p class="product-description">Pilihan perawatan diri untuk kebutuhan sehari-hari.</p>
+                    <div class="product-rating">★★★★★ <span style="color:#9aa39b">(Pilihan)</span></div>
+                    <div class="product-price">Lihat Detail Produk</div>
+                    <div class="product-bottom">
+                        <span class="product-stock">Katalog produk</span>
+                        <button class="product-add" onclick="openMedikaAccess()" aria-label="Lihat produk">↗</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=700&q=85" alt="Produk farmasi" loading="lazy">
+                    <span class="product-tag">PHARMACY</span>
+                    <button class="product-wishlist" onclick="openMedikaAccess()" aria-label="Wishlist">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Obat Bebas</div>
+                    <h3 class="product-name">Pharmacy Essentials</h3>
+                    <p class="product-description">Koleksi kebutuhan farmasi pilihan MEDIKA.</p>
+                    <div class="product-rating">★★★★★ <span style="color:#9aa39b">(Pilihan)</span></div>
+                    <div class="product-price">Lihat Detail Produk</div>
+                    <div class="product-bottom">
+                        <span class="product-stock">Katalog produk</span>
+                        <button class="product-add" onclick="openMedikaAccess()" aria-label="Lihat produk">↗</button>
+                    </div>
+                </div>
+            </article>
+
+            <article class="product-card">
+                <div class="product-image-wrap">
+                    <img src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=700&q=85" alt="Peralatan medis" loading="lazy">
+                    <span class="product-tag">HEALTH DEVICE</span>
+                    <button class="product-wishlist" onclick="openMedikaAccess()" aria-label="Wishlist">♡</button>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Alat Kesehatan</div>
+                    <h3 class="product-name">Health Care Tools</h3>
+                    <p class="product-description">Peralatan penunjang kebutuhan kesehatan.</p>
+                    <div class="product-rating">★★★★★ <span style="color:#9aa39b">(Pilihan)</span></div>
+                    <div class="product-price">Lihat Detail Produk</div>
+                    <div class="product-bottom">
+                        <span class="product-stock">Katalog produk</span>
+                        <button class="product-add" onclick="openMedikaAccess()" aria-label="Lihat produk">↗</button>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="product-see-all">
+            <button class="btn btn-outline" onclick="showAllProducts()">LIHAT SEMUA PRODUK ↗</button>
+        </div>
+
+    </div>
+</section>
+
+<!-- WELLNESS BANNER -->
+<section class="wellness-banner">
+    <div class="container wellness-inner">
+        <div>
+            <div class="section-label">A healthier lifestyle starts here</div>
+            <h2 style="margin-top:12px">Your Health Is Your Priority.<br><em>We Care About It.</em></h2>
+            <p>
+                Perhatikan kebutuhan kesehatan dan perawatan diri sebagai
+                bagian dari keseharian. Temukan pilihan produk dan layanan
+                melalui MEDIKA.
+            </p>
+        </div>
+        <a href="#products" class="btn btn-gold">SHOP YOUR NEEDS ↗</a>
+    </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section section" id="services">
+    <div class="container">
+
+        <div class="section-head">
+            <div class="section-label">More than a pharmacy</div>
+            <h2 class="section-title">Care Beyond Products</h2>
+            <p class="section-desc">
+                Layanan MEDIKA dirancang untuk membuat pengalaman
+                berbelanja lebih mudah dan nyaman.
+            </p>
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service-card">
+                <div class="service-photo">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=85" alt="Konsultasi kesehatan" loading="lazy">
+                </div>
+                <div class="service-info">
+                    <h3>Consultation</h3>
+                    <p>Hubungi layanan MEDIKA untuk mendapatkan informasi produk dan bantuan lebih lanjut.</p>
+                    <a href="#" onclick="openConsultation();return false">CONTACT US ↗</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-photo">
+                    <img src="https://images.unsplash.com/photo-1586880244406-556ebe35f282?auto=format&fit=crop&w=800&q=85" alt="Paket pesanan" loading="lazy">
+                </div>
+                <div class="service-info">
+                    <h3>Order Tracking</h3>
+                    <p>Pantau informasi pesanan dan riwayat transaksi melalui halaman akun pelanggan.</p>
+                    <a href="#" onclick="openMedikaAccess();return false">TRACK YOUR ORDER ↗</a>
+                </div>
+            </div>
+
+            <div class="service-card">
+                <div class="service-photo">
+                    <img src="https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=800&q=85" alt="Perawatan diri" loading="lazy">
+                </div>
+                <div class="service-info">
+                    <h3>Member Rewards</h3>
+                    <p>Nikmati program poin member, voucher, dan informasi promosi yang tersedia.</p>
+                    <a href="#" onclick="openMedikaAccess();return false">EXPLORE REWARDS ↗</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer" id="footer">
+    <div class="container">
+
+        <div class="footer-grid">
+
+            <div>
+                <a href="#home" class="brand">
+                    <div class="brand-symbol">✚</div>
+                    <div>
+                        <div class="brand-title">MEDIKA</div>
+                        <div class="brand-subtitle">PHARMACY & WELLNESS</div>
+                    </div>
+                </a>
+                <p class="footer-about">
+                    Your everyday wellness partner. Menemani kebutuhan
+                    kesehatan dan perawatan dengan pengalaman belanja
+                    yang praktis, nyaman, dan penuh kepedulian.
+                </p>
+            </div>
+
+            <div class="footer-col">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="#home">Beranda</a></li>
+                    <li><a href="#categories">Kategori</a></li>
+                    <li><a href="#products">Produk</a></li>
+                    <li><a href="#services">Layanan</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Customer Care</h4>
+                <ul>
+                    <li><a href="#" onclick="openMedikaAccess();return false">Akun Saya</a></li>
+                    <li><a href="#" onclick="openCart();return false">Keranjang</a></li>
+                    <li><a href="#" onclick="openMedikaAccess();return false">Pesanan Saya</a></li>
+                    <li><a href="#" onclick="openConsultation();return false">Konsultasi</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <div class="footer-contact">✉ medika.pharmacy@email.com</div>
+                <div class="footer-contact">☎ 0813-3601-9326</div>
+                <div class="footer-contact">⌖ Bojonegoro, Jawa Timur</div>
+                <div class="footer-contact">⏱ Setiap hari · 08.00–21.00</div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span>© 2026 MEDIKA Pharmacy & Wellness. All rights reserved.</span>
+            <span>Made with care for your wellbeing ♡</span>
+        </div>
+
+    </div>
+</footer>
+
+<!-- PART 2, 3, AND 4 WILL BE ADDED BEFORE THE CLOSING BODY TAG -->
+
+<!-- =====================================================
+     MEDIKA — BAGIAN 2/4
+     CUSTOMER SYSTEM • 20 PRODUCTS • CART • CHECKOUT
+===================================================== -->
+
+<style>
+/* CUSTOMER SYSTEM */
+.medika-modal {
+    display:none;
+    position:fixed;
+    inset:0;
+    z-index:3000;
+    background:rgba(8,24,17,.76);
+    backdrop-filter:blur(7px);
+    align-items:center;
+    justify-content:center;
+    padding:18px;
+    overflow-y:auto;
+}
+.medika-modal.active {display:flex}
+.medika-panel {
+    background:#fffdf8;
+    color:#20382c;
+    width:min(720px,100%);
+    max-height:92vh;
+    overflow-y:auto;
+    border-radius:20px;
+    padding:28px;
+    position:relative;
+    box-shadow:0 25px 80px #0003;
+}
+.medika-panel.wide {width:min(950px,100%)}
+.medika-close {
+    position:absolute;
+    right:17px;
+    top:13px;
+    border:0;
+    background:#edf1eb;
+    width:34px;
+    height:34px;
+    border-radius:50%;
+    font-size:20px;
+    cursor:pointer;
+}
+.medika-panel h2 {
+    font-family:'Playfair Display',serif;
+    font-size:29px;
+    margin:0 0 8px;
+}
+.medika-muted {color:#788379;font-size:13px}
+.medika-form {display:grid;gap:13px;margin-top:22px}
+.medika-form label {font-size:13px;font-weight:700}
+.medika-form input,.medika-form select,.medika-form textarea {
+    width:100%;
+    padding:13px 14px;
+    border:1px solid #dce3da;
+    border-radius:10px;
+    background:white;
+    font:inherit;
+    color:#20382c;
+    outline:none;
+}
+.medika-form input:focus,.medika-form select:focus {
+    border-color:#527b5d;
+    box-shadow:0 0 0 3px #527b5d18;
+}
+.medika-primary,.medika-secondary {
+    border:0;
+    padding:13px 18px;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight:700;
+    font:inherit;
+}
+.medika-primary {background:#173f2e;color:white}
+.medika-primary:hover {background:#245b40}
+.medika-secondary {background:#edf1eb;color:#244332}
+.medika-full {width:100%}
+.medika-switch {
+    color:#326344;
+    cursor:pointer;
+    font-weight:700;
+    border:0;
+    background:none;
+}
+.medika-product-meta {
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+    margin:10px 0;
+}
+.medika-tag {
+    font-size:10px;
+    padding:5px 8px;
+    border-radius:20px;
+    background:#edf2eb;
+    color:#365b40;
+    font-weight:700;
+}
+.medika-tag.warning {background:#fff0d7;color:#96601b}
+.medika-tag.danger {background:#ffe5e2;color:#a33b32}
+.medika-product-expiry {
+    color:#788379;
+    font-size:11px;
+    margin-top:6px;
+}
+.medika-product-actions {
+    display:flex;
+    gap:8px;
+    margin-top:12px;
+}
+.medika-product-actions button {
+    flex:1;
+    border:0;
+    border-radius:8px;
+    padding:10px 7px;
+    cursor:pointer;
+    font-weight:700;
+    font-size:12px;
+}
+.medika-add {background:#173f2e;color:white}
+.medika-wish {background:#edf1eb;color:#31553c}
+.medika-product-card {
+    background:#fff;
+    border:1px solid #e8ece5;
+    border-radius:14px;
+    padding:12px;
+    overflow:hidden;
+}
+.medika-product-card img {
+    width:100%;
+    height:175px;
+    object-fit:cover;
+    border-radius:10px;
+    background:#f0f1ed;
+}
+.medika-product-card h3 {
+    font-size:14px;
+    line-height:1.4;
+    margin:10px 0 5px;
+    color:#20382c;
+}
+.medika-product-price {
+    color:#1c5638;
+    font-size:16px;
+    font-weight:800;
+}
+.medika-old-price {
+    font-size:11px;
+    color:#9a9a91;
+    text-decoration:line-through;
+    margin-left:5px;
+}
+.medika-cart-row {
+    display:grid;
+    grid-template-columns:75px 1fr auto;
+    gap:13px;
+    align-items:center;
+    padding:13px 0;
+    border-bottom:1px solid #e8ece5;
+}
+.medika-cart-row img {
+    width:75px;height:75px;object-fit:cover;border-radius:10px;
+}
+.medika-qty {
+    display:flex;align-items:center;gap:10px;margin-top:7px;
+}
+.medika-qty button {
+    width:27px;height:27px;border:0;border-radius:7px;
+    background:#edf1eb;cursor:pointer;
+}
+.medika-remove {
+    border:0;background:none;color:#a33b32;cursor:pointer;
+    font-size:12px;margin-top:5px;
+}
+.medika-total {
+    display:flex;justify-content:space-between;
+    padding:10px 0;font-size:14px;
+}
+.medika-total.final {
+    border-top:1px solid #dce3da;
+    margin-top:10px;padding-top:16px;
+    font-size:18px;font-weight:800;color:#173f2e;
+}
+.medika-empty {
+    text-align:center;padding:35px 10px;color:#7b877d;
+}
+.medika-empty span {font-size:42px;display:block;margin-bottom:10px}
+.medika-order-card {
+    border:1px solid #e3e9e1;border-radius:13px;
+    padding:15px;margin:12px 0;background:white;
+}
+.medika-order-status {
+    display:inline-block;background:#edf2eb;color:#315b3e;
+    border-radius:20px;padding:5px 10px;font-size:11px;font-weight:700;
+}
+.medika-detail-image {
+    width:100%;max-height:280px;object-fit:cover;border-radius:13px;
+}
+.medika-toast {
+    position:fixed;bottom:25px;left:50%;transform:translateX(-50%);
+    z-index:5000;background:#173f2e;color:white;
+    padding:13px 20px;border-radius:30px;
+    box-shadow:0 8px 30px #0003;font-size:13px;
+    display:none;max-width:90%;text-align:center;
+}
+@media(max-width:600px) {
+    .medika-panel {padding:23px 17px}
+    .medika-product-card img {height:135px}
+    .medika-cart-row {grid-template-columns:60px 1fr}
+    .medika-cart-row img {width:60px;height:60px}
+    .medika-cart-row > div:last-child {grid-column:2}
+}
+</style>
+
+<!-- MODAL LOGIN -->
+<div class="medika-modal" id="medikaLoginModal">
+ <div class="medika-panel">
+  <button class="medika-close" onclick="closeMedikaModal('medikaLoginModal')">×</button>
+  <div id="medikaLoginContent"></div>
+ </div>
+</div>
+
+<!-- MODAL DETAIL PRODUK -->
+<div class="medika-modal" id="medikaDetailModal">
+ <div class="medika-panel">
+  <button class="medika-close" onclick="closeMedikaModal('medikaDetailModal')">×</button>
+  <div id="medikaDetailContent"></div>
+ </div>
+</div>
+
+<!-- MODAL KERANJANG -->
+<div class="medika-modal" id="medikaCartModal">
+ <div class="medika-panel wide">
+  <button class="medika-close" onclick="closeMedikaModal('medikaCartModal')">×</button>
+  <div id="medikaCartContent"></div>
+ </div>
+</div>
+
+<!-- MODAL CHECKOUT -->
+<div class="medika-modal" id="medikaCheckoutModal">
+ <div class="medika-panel">
+  <button class="medika-close" onclick="closeMedikaModal('medikaCheckoutModal')">×</button>
+  <div id="medikaCheckoutContent"></div>
+ </div>
+</div>
+
+<!-- MODAL WISHLIST -->
+<div class="medika-modal" id="medikaWishlistModal">
+ <div class="medika-panel wide">
+  <button class="medika-close" onclick="closeMedikaModal('medikaWishlistModal')">×</button>
+  <div id="medikaWishlistContent"></div>
+ </div>
+</div>
+
+<!-- MODAL PESANAN -->
+<div class="medika-modal" id="medikaOrdersModal">
+ <div class="medika-panel wide">
+  <button class="medika-close" onclick="closeMedikaModal('medikaOrdersModal')">×</button>
+  <div id="medikaOrdersContent"></div>
+ </div>
+</div>
+
+<div class="medika-toast" id="medikaToast"></div>
+
+<script>
+/* =====================================================
+   1. DATA PRODUK MEDIKA
+   Semua stok dan tanggal kedaluwarsa di bawah adalah
+   DATA CONTOH. Sesuaikan dengan kemasan dan stok asli.
+===================================================== */
+
+const medikaProducts = [
+ {id:1,name:"Paracetamol 500 mg",category:"Obat Bebas",price:8500,stock:45,expiry:"2028-05-20",image:"https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=85",description:"Contoh produk obat pereda demam dan nyeri."},
+ {id:2,name:"Antasida Tablet",category:"Obat Bebas",price:6500,stock:32,expiry:"2027-12-15",image:"https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=700&q=85",description:"Contoh produk antasida untuk membantu meredakan keluhan asam lambung."},
+ {id:3,name:"Oralit Sachet",category:"Obat Bebas",price:2500,stock:60,expiry:"2028-03-10",image:"https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=700&q=85",description:"Contoh produk oralit dalam kemasan sachet."},
+ {id:4,name:"Obat Batuk Sirup",category:"Obat Bebas",price:18000,stock:18,expiry:"2027-02-10",image:"https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=700&q=85",description:"Contoh produk sirup batuk. Perhatikan petunjuk pada kemasan."},
+ {id:5,name:"Minyak Kayu Putih",category:"Obat Bebas",price:14500,stock:27,expiry:"2028-08-12",image:"https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=85",description:"Contoh minyak kayu putih untuk pemakaian luar."},
+
+ {id:6,name:"Vitamin C 500 mg",category:"Vitamin & Suplemen",price:22000,stock:50,expiry:"2028-06-18",image:"https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=85",description:"Contoh produk suplemen vitamin C."},
+ {id:7,name:"Vitamin D3",category:"Vitamin & Suplemen",price:35000,stock:24,expiry:"2027-11-21",image:"https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=85",description:"Contoh produk suplemen vitamin D3."},
+ {id:8,name:"Multivitamin Daily",category:"Vitamin & Suplemen",price:42000,stock:31,expiry:"2028-01-17",image:"https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=85",description:"Contoh produk multivitamin harian."},
+ {id:9,name:"Vitamin B Complex",category:"Vitamin & Suplemen",price:26000,stock:14,expiry:"2027-03-25",image:"https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=85",description:"Contoh produk vitamin B kompleks."},
+ {id:10,name:"Zinc Supplement",category:"Vitamin & Suplemen",price:29000,stock:22,expiry:"2028-09-08",image:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85",description:"Contoh produk suplemen zinc."},
+
+ {id:11,name:"Sunscreen SPF 50",category:"Perawatan Tubuh",price:58000,stock:19,expiry:"2027-10-12",image:"https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=85",description:"Contoh produk tabir surya untuk perawatan kulit."},
+ {id:12,name:"Facial Wash Gentle",category:"Perawatan Tubuh",price:32000,stock:28,expiry:"2028-02-14",image:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85",description:"Contoh produk pembersih wajah."},
+ {id:13,name:"Hand Sanitizer 100 ml",category:"Perawatan Tubuh",price:15000,stock:42,expiry:"2028-04-30",image:"https://images.unsplash.com/photo-1584744982491-665216d95f8b?auto=format&fit=crop&w=700&q=85",description:"Contoh produk pembersih tangan."},
+ {id:14,name:"Body Lotion",category:"Perawatan Tubuh",price:39000,stock:8,expiry:"2027-01-20",image:"https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=85",description:"Contoh produk perawatan kulit tubuh."},
+ {id:15,name:"Antiseptic Solution",category:"Perawatan Tubuh",price:21000,stock:17,expiry:"2028-07-09",image:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85",description:"Contoh cairan antiseptik untuk penggunaan sesuai label."},
+
+ {id:16,name:"Termometer Digital",category:"Alat Kesehatan",price:48000,stock:12,expiry:"2030-01-01",image:"https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=700&q=85",description:"Contoh alat pengukur suhu tubuh."},
+ {id:17,name:"Masker Medis 3 Ply",category:"Alat Kesehatan",price:18000,stock:100,expiry:"2028-11-20",image:"https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=700&q=85",description:"Contoh masker medis sekali pakai."},
+ {id:18,name:"Tensimeter Digital",category:"Alat Kesehatan",price:235000,stock:6,expiry:"2030-01-01",image:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=85",description:"Contoh alat pengukur tekanan darah."},
+ {id:19,name:"Perban Elastis",category:"Alat Kesehatan",price:12000,stock:35,expiry:"2029-05-01",image:"https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=700&q=85",description:"Contoh perban elastis untuk kebutuhan P3K."},
+ {id:20,name:"First Aid Kit",category:"Alat Kesehatan",price:89000,stock:9,expiry:"2029-12-01",image:"https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=700&q=85",description:"Contoh perlengkapan pertolongan pertama."}
+];
+
+/* SATU SUMBER DATA PRODUK UNTUK PELANGGAN, ADMIN, DAN KASIR */
+try {
+ const savedMedikaProducts = JSON.parse(localStorage.getItem("medika_products") || "null");
+ if (Array.isArray(savedMedikaProducts) && savedMedikaProducts.length) {
+  medikaProducts.splice(0, medikaProducts.length, ...savedMedikaProducts);
+ }
+} catch (error) {
+ console.warn("Data produk tersimpan tidak dapat dibaca; memakai katalog awal.", error);
+}
+window.medikaProducts = medikaProducts;
+
+/* FOTO UNSPLASH KATALOG: satu sumber untuk pelanggan, admin, dan kasir.
+   URL foto disimpan pada properti image produk yang sama. */
+const medikaUnsplashPhotos = {
+  1:"https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=85",
+  2:"https://images.unsplash.com/photo-1550572017-edd951b55104?auto=format&fit=crop&w=700&q=85",
+  3:"https://images.unsplash.com/photo-1607619056574-7b8d3ee536b2?auto=format&fit=crop&w=700&q=85",
+  4:"https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=700&q=85",
+  5:"https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=700&q=85",
+  6:"https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=85",
+  7:"https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=85",
+  8:"https://images.unsplash.com/photo-1556229010-6c3f2c9ca5f8?auto=format&fit=crop&w=700&q=85",
+  9:"https://images.unsplash.com/photo-1559757175-0eb30cd8c063?auto=format&fit=crop&w=700&q=85",
+  10:"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85",
+  11:"https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=85",
+  12:"https://images.unsplash.com/photo-1585232351009-aa87416fca90?auto=format&fit=crop&w=700&q=85",
+  13:"https://images.unsplash.com/photo-1584744982491-665216d95f8b?auto=format&fit=crop&w=700&q=85",
+  14:"https://images.unsplash.com/photo-1601049541289-9b1b7bbbfe19?auto=format&fit=crop&w=700&q=85",
+  15:"https://images.unsplash.com/photo-1547887538-e3a2f32cb1cc?auto=format&fit=crop&w=700&q=85",
+  16:"https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=700&q=85",
+  17:"https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=700&q=85",
+  18:"https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=700&q=85",
+  19:"https://images.unsplash.com/photo-1584820927498-cfe5211fd8bf?auto=format&fit=crop&w=700&q=85",
+  20:"https://images.unsplash.com/photo-1603398938378-e54eab446dde?auto=format&fit=crop&w=700&q=85"
+};
+// Perbarui foto katalog bawaan yang lama/rusak, lalu simpan agar ketiga dashboard membaca URL identik.
+medikaProducts.forEach(product=>{
+  if(medikaUnsplashPhotos[product.id]) product.image=medikaUnsplashPhotos[product.id];
+});
+try { localStorage.setItem("medika_products", JSON.stringify(medikaProducts)); } catch(error) { console.warn("Foto katalog belum dapat disimpan.",error); }
+
+
+/* =====================================================
+   2. PENYIMPANAN LOKAL
+===================================================== */
+
+function medikaGet(key,fallback) {
+ try {
+  const value=localStorage.getItem(key);
+  return value ? JSON.parse(value) : fallback;
+ } catch(e) {return fallback;}
+}
+function medikaSave(key,value) {
+ localStorage.setItem(key,JSON.stringify(value));
+}
+
+let medikaCart=medikaGet("medika_cart",[]);
+let medikaWishlist=medikaGet("medika_wishlist",[]);
+let medikaOrders=medikaGet("medika_orders",[]);
+let medikaCustomers=medikaGet("medika_customers",[]);
+let medikaSession=medikaGet("medika_session",null);
+
+function medikaRupiah(value) {
+ return new Intl.NumberFormat("id-ID",{
+  style:"currency",currency:"IDR",maximumFractionDigits:0
+ }).format(value);
+}
+function medikaDate(value) {
+ return new Date(value+"T00:00:00").toLocaleDateString("id-ID",{
+  day:"numeric",month:"long",year:"numeric"
+ });
+}
+function medikaExpiryStatus(date) {
+ const now=new Date();
+ const expiry=new Date(date+"T23:59:59");
+ const days=Math.ceil((expiry-now)/(1000*60*60*24));
+ if(days<0)return {text:"Kedaluwarsa",className:"danger",expired:true};
+ if(days<=90)return {text:"Segera kedaluwarsa",className:"warning",expired:false};
+ return {text:"Masa berlaku aman",className:"",expired:false};
+}
+function medikaAvailable(product) {
+ return product.stock>0 && !medikaExpiryStatus(product.expiry).expired;
+}
+function medikaToast(message) {
+ const el=document.getElementById("medikaToast");
+ if(!el)return;
+ el.textContent=message;
+ el.style.display="block";
+ clearTimeout(window.medikaToastTimer);
+ window.medikaToastTimer=setTimeout(()=>el.style.display="none",2600);
+}
+function openMedikaModal(id) {
+ document.getElementById(id)?.classList.add("active");
+}
+function closeMedikaModal(id) {
+ document.getElementById(id)?.classList.remove("active");
+}
+
+/* =====================================================
+   3. RENDER KATALOG 20 PRODUK
+===================================================== */
+
+function medikaRenderProducts(category="Semua") {
+ const grid=document.getElementById("productGrid");
+ if(!grid)return;
+
+ const search=(document.getElementById("productSearch")?.value||"").toLowerCase();
+
+ const filtered=medikaProducts.filter(p=>{
+  const matchCategory=category==="Semua" || p.category===category;
+  const matchSearch=(p.name+" "+p.category).toLowerCase().includes(search);
+  return matchCategory && matchSearch;
+ });
+
+ grid.innerHTML=filtered.map(p=>{
+  const expiry=medikaExpiryStatus(p.expiry);
+  const unavailable=!medikaAvailable(p);
+  return `
+   <article class="medika-product-card">
+    <img src="${p.image}" alt="${p.name}" loading="lazy"
+     referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f0f1ed/31533d?text=MEDIKA'">
+    <div class="medika-product-meta">
+     <span class="medika-tag">${p.category}</span>
+     <span class="medika-tag ${expiry.className}">${expiry.text}</span>
+    </div>
+    <h3>${p.name}</h3>
+    <div class="medika-product-price">${medikaRupiah(p.price)}</div>
+    <div class="medika-product-expiry">Kedaluwarsa: ${medikaDate(p.expiry)}</div>
+    <div class="medika-product-expiry">Stok tersedia: ${p.stock} unit</div>
+    <div class="medika-product-actions">
+     <button class="medika-add" ${unavailable?"disabled":""}
+      style="${unavailable?"opacity:.45;cursor:not-allowed":""}"
+      onclick="medikaAddCart(${p.id})">
+      ${unavailable?"Tidak tersedia":"+ Keranjang"}
+     </button>
+     <button class="medika-wish" onclick="medikaToggleWishlist(${p.id})">♡</button>
+    </div>
+    <button onclick="medikaShowDetail(${p.id})"
+     style="border:0;background:none;color:#376447;font-size:12px;margin-top:10px;cursor:pointer">
+     Lihat detail produk →
+    </button>
+   </article>`;
+ }).join("");
+
+ if(!filtered.length) {
+  grid.innerHTML='<div class="medika-empty" style="grid-column:1/-1"><span>⌕</span>Produk tidak ditemukan.</div>';
+ }
+}
+
+function filterProducts(category) {
+ medikaRenderProducts(category||"Semua");
+}
+function searchProducts(value) {
+ medikaRenderProducts(window.medikaActiveCategory||"Semua");
+}
+function showAllProducts() {
+ window.medikaActiveCategory="Semua";
+ const search=document.getElementById("productSearch");
+ if(search)search.value="";
+ medikaRenderProducts("Semua");
+}
+window.medikaActiveCategory="Semua";
+
+/* Ganti filter kategori dari tombol kategori Part 1 */
+document.addEventListener("click",function(e){
+ const button=e.target.closest("[onclick*='filterProducts']");
+ if(button) {
+  const match=button.getAttribute("onclick").match(/filterProducts\(['"]([^'"]+)/);
+  if(match)window.medikaActiveCategory=match[1];
+ }
+});
+
+/* =====================================================
+   4. DETAIL PRODUK
+===================================================== */
+
+function medikaShowDetail(id) {
+ const p=medikaProducts.find(x=>x.id===id);
+ if(!p)return;
+ const expiry=medikaExpiryStatus(p.expiry);
+ document.getElementById("medikaDetailContent").innerHTML=`
+  <img class="medika-detail-image" src="${p.image}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://placehold.co/600x450/f0f1ed/31533d?text=MEDIKA'">
+  <div class="medika-product-meta">
+   <span class="medika-tag">${p.category}</span>
+   <span class="medika-tag ${expiry.className}">${expiry.text}</span>
+  </div>
+  <h2>${p.name}</h2>
+  <div class="medika-product-price">${medikaRupiah(p.price)}</div>
+  <p style="line-height:1.7;color:#647267;margin:15px 0">${p.description}</p>
+  <p class="medika-muted">Stok contoh: ${p.stock} unit</p>
+  <p class="medika-muted">Tanggal kedaluwarsa contoh: ${medikaDate(p.expiry)}</p>
+  <p class="medika-muted" style="margin:15px 0">Informasi produk dan stok pada website ini merupakan data contoh. Periksa kemasan serta informasi resmi produk sebelum membeli atau menggunakan.</p>
+  <button class="medika-primary medika-full" onclick="medikaAddCart(${p.id});closeMedikaModal('medikaDetailModal')"
+   ${!medikaAvailable(p)?"disabled":""}>
+   ${medikaAvailable(p)?"Tambah ke Keranjang":"Produk Tidak Tersedia"}
+  </button>`;
+ openMedikaModal("medikaDetailModal");
+}
+
+/* =====================================================
+   5. LOGIN & REGISTER PELANGGAN
+===================================================== */
+
+function openMedikaAccess() {
+ medikaShowLogin();
+ openMedikaModal("medikaLoginModal");
+}
+function medikaShowLogin() {
+ document.getElementById("medikaLoginContent").innerHTML=`
+  <h2>Welcome Back</h2>
+  <p class="medika-muted">Masuk ke akun MEDIKA kamu.</p>
+  <form class="medika-form" onsubmit="medikaLoginCustomer(event)">
+   <div><label>Email</label><input type="email" id="medikaLoginEmail" required placeholder="nama@email.com"></div>
+   <div><label>Password</label><input type="password" id="medikaLoginPassword" required placeholder="Masukkan password"></div>
+   <button class="medika-primary medika-full" type="submit">Masuk ke Akun</button>
+  </form>
+  <p class="medika-muted" style="text-align:center;margin-top:20px">
+   Belum punya akun?
+   <button class="medika-switch" onclick="medikaShowRegister()">Daftar sekarang</button>
+  </p>
+  <p class="medika-muted" style="margin-top:18px">Akun pelanggan hanya untuk simulasi website ini.</p>
+  <p class="medika-muted" style="text-align:center;margin-top:14px">
+   Login staf? <button class="medika-switch" type="button" onclick="closeMedikaModal('medikaLoginModal');medikaOpenStaffLogin()">Admin / Kasir</button>
+  </p>`;
+}
+function medikaShowRegister() {
+ document.getElementById("medikaLoginContent").innerHTML=`
+  <h2>Buat Akun</h2>
+  <p class="medika-muted">Daftar sebagai pelanggan MEDIKA.</p>
+  <form class="medika-form" onsubmit="medikaRegisterCustomer(event)">
+   <div><label>Nama lengkap</label><input id="medikaRegName" required placeholder="Nama kamu"></div>
+   <div><label>Email</label><input type="email" id="medikaRegEmail" required placeholder="nama@email.com"></div>
+   <div><label>Nomor WhatsApp</label><input id="medikaRegPhone" required placeholder="08xxxxxxxxxx"></div>
+   <div><label>Password</label><input type="password" id="medikaRegPassword" minlength="6" required placeholder="Minimal 6 karakter"></div>
+   <button class="medika-primary medika-full" type="submit">Buat Akun</button>
+  </form>
+  <p class="medika-muted" style="text-align:center;margin-top:18px">
+   Sudah punya akun?
+   <button class="medika-switch" onclick="medikaShowLogin()">Masuk</button>
+  </p>`;
+}
+function medikaRegisterCustomer(event) {
+ event.preventDefault();
+ const name=document.getElementById("medikaRegName").value.trim();
+ const email=document.getElementById("medikaRegEmail").value.trim().toLowerCase();
+ const phone=document.getElementById("medikaRegPhone").value.trim();
+ const password=document.getElementById("medikaRegPassword").value;
+
+ if(medikaCustomers.some(c=>c.email===email)) {
+  medikaToast("Email sudah terdaftar.");
+  return;
+ }
+ const customer={id:Date.now(),name,email,phone,password,role:"customer"};
+ medikaCustomers.push(customer);
+ medikaSave("medika_customers",medikaCustomers);
+ medikaSession={id:customer.id,name,email,phone,role:"customer"};
+ medikaSave("medika_session",medikaSession);
+ medikaUpdateAccount();
+ closeMedikaModal("medikaLoginModal");
+ medikaToast("Akun berhasil dibuat. Selamat datang!");
+}
+function medikaLoginCustomer(event) {
+ event.preventDefault();
+ const email=document.getElementById("medikaLoginEmail").value.trim().toLowerCase();
+ const password=document.getElementById("medikaLoginPassword").value;
+ const customer=medikaCustomers.find(c=>c.email===email&&c.password===password);
+
+ if(!customer) {
+  medikaToast("Email atau password pelanggan salah.");
+  return;
+ }
+ medikaSession={id:customer.id,name:customer.name,email:customer.email,phone:customer.phone,role:"customer"};
+ medikaSave("medika_session",medikaSession);
+ medikaUpdateAccount();
+ closeMedikaModal("medikaLoginModal");
+ medikaToast("Berhasil masuk, "+customer.name+"!");
+}
+function medikaLogout() {
+ medikaSession=null;
+ localStorage.removeItem("medika_session");
+ medikaUpdateAccount();
+ medikaToast("Kamu berhasil keluar.");
+}
+function medikaUpdateAccount() {
+ const button=document.getElementById("navAccountButton");
+ if(!button)return;
+ if(medikaSession) {
+  button.textContent="Hai, "+medikaSession.name.split(" ")[0];
+  button.onclick=medikaShowCustomerMenu;
+ } else {
+  button.textContent="Akses Pengguna";
+  button.onclick=openMedikaAccess;
+ }
+}
+function medikaShowCustomerMenu() {
+ document.getElementById("medikaLoginContent").innerHTML=`
+  <h2>Halo, ${medikaSession.name}!</h2>
+  <p class="medika-muted">${medikaSession.email}</p>
+  <div class="medika-form">
+   <button class="medika-secondary" onclick="closeMedikaModal('medikaLoginModal');medikaOpenOrders()">Riwayat Pesanan</button>
+   <button class="medika-secondary" onclick="closeMedikaModal('medikaLoginModal');medikaOpenWishlist()">Wishlist Saya</button>
+   <button class="medika-secondary" onclick="medikaLogout();closeMedikaModal('medikaLoginModal')">Keluar dari Akun</button>
+  </div>`;
+ openMedikaModal("medikaLoginModal");
+}
+
+/* =====================================================
+   6. KERANJANG
+===================================================== */
+
+function medikaAddCart(id) {
+ const p=medikaProducts.find(x=>x.id===id);
+ if(!p||!medikaAvailable(p)) {
+  medikaToast("Produk tidak tersedia atau sudah kedaluwarsa.");
+  return;
+ }
+ const existing=medikaCart.find(x=>x.id===id);
+ const totalInCart=existing?existing.qty:0;
+ if(totalInCart>=p.stock) {
+  medikaToast("Jumlah melebihi stok yang tersedia.");
+  return;
+ }
+ if(existing)existing.qty++;
+ else medikaCart.push({id,qty:1});
+ medikaSave("medika_cart",medikaCart);
+ medikaUpdateCartCount();
+ medikaToast(p.name+" ditambahkan ke keranjang.");
+}
+function medikaUpdateCartCount() {
+ const count=medikaCart.reduce((sum,item)=>sum+item.qty,0);
+ const el=document.getElementById("cartCount");
+ if(el)el.textContent=count;
+}
+function openCart() {
+ medikaRenderCart();
+ openMedikaModal("medikaCartModal");
+}
+function medikaRenderCart() {
+ const content=document.getElementById("medikaCartContent");
+ if(!medikaCart.length) {
+  content.innerHTML=`<h2>Keranjang Belanja</h2>
+   <div class="medika-empty"><span>🛒</span>Keranjang kamu masih kosong.
+   <br><button class="medika-primary" style="margin-top:15px" onclick="closeMedikaModal('medikaCartModal');document.getElementById('products')?.scrollIntoView({behavior:'smooth'})">Mulai Belanja</button></div>`;
+  return;
+ }
+ let subtotal=0;
+ const rows=medikaCart.map(item=>{
+  const p=medikaProducts.find(x=>x.id===item.id);
+  if(!p)return "";
+  subtotal+=p.price*item.qty;
+  return `<div class="medika-cart-row">
+   <img src="${p.image}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://placehold.co/240x180/f0f1ed/31533d?text=MEDIKA'">
+   <div><strong>${p.name}</strong>
+    <div class="medika-muted">${medikaRupiah(p.price)}</div>
+    <div class="medika-qty">
+     <button onclick="medikaChangeQty(${p.id},-1)">−</button>
+     <span>${item.qty}</span>
+     <button onclick="medikaChangeQty(${p.id},1)">+</button>
+    </div>
+    <button class="medika-remove" onclick="medikaRemoveCart(${p.id})">Hapus</button>
+   </div>
+   <strong>${medikaRupiah(p.price*item.qty)}</strong>
+  </div>`;
+ }).join("");
+ content.innerHTML=`
+  <h2>Keranjang Belanja</h2>
+  <p class="medika-muted">Periksa kembali produk pilihanmu.</p>
+  ${rows}
+  <div class="medika-total final"><span>Subtotal</span><span>${medikaRupiah(subtotal)}</span></div>
+  <button class="medika-primary medika-full" onclick="medikaOpenCheckout()">Lanjut ke Checkout →</button>
+  <p class="medika-muted" style="margin-top:12px">Biaya pengiriman dapat dikonfirmasi saat pemesanan.</p>`;
+}
+function medikaChangeQty(id,change) {
+ const item=medikaCart.find(x=>x.id===id);
+ const p=medikaProducts.find(x=>x.id===id);
+ if(!item||!p)return;
+ const next=item.qty+change;
+ if(next<=0) {
+  medikaRemoveCart(id);
+  return;
+ }
+ if(next>p.stock) {
+  medikaToast("Jumlah melebihi stok.");
+  return;
+ }
+ item.qty=next;
+ medikaSave("medika_cart",medikaCart);
+ medikaUpdateCartCount();
+ medikaRenderCart();
+}
+function medikaRemoveCart(id) {
+ medikaCart=medikaCart.filter(x=>x.id!==id);
+ medikaSave("medika_cart",medikaCart);
+ medikaUpdateCartCount();
+ medikaRenderCart();
+ medikaToast("Produk dihapus dari keranjang.");
+}
+
+/* =====================================================
+   7. WISHLIST
+===================================================== */
+
+function medikaToggleWishlist(id) {
+ if(medikaWishlist.includes(id)) {
+  medikaWishlist=medikaWishlist.filter(x=>x!==id);
+  medikaToast("Produk dihapus dari wishlist.");
+ } else {
+  medikaWishlist.push(id);
+  medikaToast("Produk disimpan ke wishlist.");
+ }
+ medikaSave("medika_wishlist",medikaWishlist);
+}
+function openWishlist() {
+ medikaOpenWishlist();
+}
+function medikaOpenWishlist() {
+ const content=document.getElementById("medikaWishlistContent");
+ const products=medikaProducts.filter(p=>medikaWishlist.includes(p.id));
+ content.innerHTML=`<h2>Wishlist Saya</h2>
+  <p class="medika-muted">Produk yang kamu simpan.</p>
+  ${products.length?products.map(p=>`
+   <div class="medika-cart-row">
+    <img src="${p.image}" alt="${p.name}" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='https://placehold.co/240x180/f0f1ed/31533d?text=MEDIKA'">
+    <div><strong>${p.name}</strong><p class="medika-product-price">${medikaRupiah(p.price)}</p>
+    <button class="medika-remove" onclick="medikaToggleWishlist(${p.id});medikaOpenWishlist()">Hapus dari wishlist</button>
+    </div>
+    <button class="medika-primary" onclick="medikaAddCart(${p.id})">+ Keranjang</button>
+   </div>`).join(""):'<div class="medika-empty">Wishlist kamu masih kosong.</div>'}`;
+ openMedikaModal("medikaWishlistModal");
+}
+
+/* =====================================================
+   8. CHECKOUT & PEMBUATAN PESANAN
+===================================================== */
+
+function medikaOpenCheckout() {
+ if(!medikaCart.length) {
+  medikaToast("Keranjang masih kosong.");
+  return;
+ }
+ if(!medikaSession||medikaSession.role!=="customer") {
+  medikaToast("Masuk sebagai pelanggan terlebih dahulu.");
+  closeMedikaModal("medikaCartModal");
+  openMedikaAccess();
+  return;
+ }
+ medikaRenderCheckout();
+ closeMedikaModal("medikaCartModal");
+ openMedikaModal("medikaCheckoutModal");
+}
+function medikaRenderCheckout() {
+ let subtotal=0;
+ medikaCart.forEach(item=>{
+  const p=medikaProducts.find(x=>x.id===item.id);
+  if(p)subtotal+=p.price*item.qty;
+ });
+ document.getElementById("medikaCheckoutContent").innerHTML=`
+  <h2>Checkout</h2>
+  <p class="medika-muted">Lengkapi informasi pengiriman pesananmu.</p>
+  <form class="medika-form" onsubmit="medikaPlaceOrder(event)">
+   <div><label>Nama penerima</label><input id="medikaReceiver" required value="${medikaSession.name}"></div>
+   <div><label>Nomor WhatsApp</label><input id="medikaReceiverPhone" required value="${medikaSession.phone||""}"></div>
+   <div><label>Alamat lengkap</label><textarea id="medikaAddress" required rows="3" placeholder="Nama jalan, kecamatan, kabupaten..."></textarea></div>
+   <div><label>Metode pembayaran</label>
+    <select id="medikaPayment" required>
+     <option value="COD">Bayar di tempat (COD)</option>
+     <option value="QRIS / E-Wallet">QRIS / E-Wallet (simulasi)</option>
+     <option value="Transfer Bank">Transfer Bank (simulasi)</option>
+    </select>
+   </div>
+   <div class="medika-total"><span>Subtotal</span><strong>${medikaRupiah(subtotal)}</strong></div>
+   <div class="medika-total"><span>Pengiriman</span><span>Dikonfirmasi kemudian</span></div>
+   <div class="medika-total final"><span>Total sementara</span><span>${medikaRupiah(subtotal)}</span></div>
+   <button type="submit" class="medika-primary medika-full">Buat Pesanan</button>
+  </form>
+  <p class="medika-muted" style="margin-top:12px">Pembayaran online di sini hanya simulasi, belum memproses transaksi sungguhan.</p>`;
+}
+function medikaPlaceOrder(event) {
+ event.preventDefault();
+ if(!medikaSession||!medikaCart.length)return;
+
+ for(const item of medikaCart) {
+  const p=medikaProducts.find(x=>x.id===item.id);
+  if(!p||!medikaAvailable(p)||item.qty>p.stock) {
+   medikaToast("Ada produk yang stoknya berubah. Periksa keranjang.");
+   return;
+  }
+ }
+ const items=medikaCart.map(item=>{
+  const p=medikaProducts.find(x=>x.id===item.id);
+  return {id:p.id,name:p.name,price:p.price,qty:item.qty,image:p.image};
+ });
+ const subtotal=items.reduce((sum,item)=>sum+item.price*item.qty,0);
+ const order={
+  id:"MED-"+Date.now(),
+  customerId:medikaSession.id,
+  customerName:document.getElementById("medikaReceiver").value,
+  phone:document.getElementById("medikaReceiverPhone").value,
+  address:document.getElementById("medikaAddress").value,
+  payment:document.getElementById("medikaPayment").value,
+  items,subtotal,total:subtotal,
+  status:"Menunggu Konfirmasi",
+  date:new Date().toISOString()
+ };
+ medikaOrders.unshift(order);
+ medikaSave("medika_orders",medikaOrders);
+
+ medikaCart.forEach(item=>{
+  const p=medikaProducts.find(x=>x.id===item.id);
+  if(p)p.stock-=item.qty;
+ });
+ medikaSave("medika_products",medikaProducts);
+
+ medikaCart=[];
+ medikaSave("medika_cart",medikaCart);
+ medikaUpdateCartCount();
+ closeMedikaModal("medikaCheckoutModal");
+
+ document.getElementById("medikaOrdersContent").innerHTML=`
+  <div class="medika-empty">
+   <span>✓</span><h2>Pesanan Berhasil Dibuat!</h2>
+   <p>Nomor pesanan kamu:</p>
+   <strong>${order.id}</strong>
+   <p class="medika-muted" style="margin:15px 0">Status: ${order.status}</p>
+   <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:16px">
+    <button class="medika-primary" onclick="medikaPrintCustomerReceipt('${order.id}')">Cetak Struk</button>
+    <button class="medika-secondary" onclick="medikaOpenOrders()">Lihat Pesanan Saya</button>
+   </div>
+  </div>`;
+ openMedikaModal("medikaOrdersModal");
+ medikaToast("Pesanan berhasil dibuat!");
+}
+
+/* =====================================================
+   9. RIWAYAT PESANAN PELANGGAN
+===================================================== */
+
+function medikaOpenOrders() {
+ if(!medikaSession) {
+  openMedikaAccess();
+  return;
+ }
+ const content=document.getElementById("medikaOrdersContent");
+ const orders=medikaOrders.filter(o=>o.customerId===medikaSession.id);
+ content.innerHTML=`
+  <h2>Pesanan Saya</h2>
+  <p class="medika-muted">Riwayat transaksi dan status pesanan.</p>
+  ${orders.length?orders.map(o=>`
+   <div class="medika-order-card">
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+     <strong>${o.id}</strong><span class="medika-order-status">${o.status}</span>
+    </div>
+    <p class="medika-muted">${new Date(o.date).toLocaleString("id-ID")}</p>
+    <p style="font-size:13px;margin:10px 0">${o.items.map(i=>i.name+" × "+i.qty).join("<br>")}</p>
+    <div class="medika-total"><span>Total</span><strong>${medikaRupiah(o.total)}</strong></div>
+    <button class="medika-secondary" onclick="medikaPrintCustomerReceipt('${o.id}')">Cetak Struk</button>
+   </div>`).join(""):'<div class="medika-empty"><span>📦</span>Belum ada pesanan.</div>'}`;
+ openMedikaModal("medikaOrdersModal");
+}
+
+/* =====================================================
+   10. CETAK STRUK PELANGGAN
+===================================================== */
+
+function medikaPrintCustomerReceipt(orderId) {
+ try{medikaOrders=JSON.parse(localStorage.getItem("medika_orders")||"[]");}catch(e){}
+ const order=medikaOrders.find(o=>o.id===orderId);
+ if(!order)return;
+ const receipt=window.open("","_blank","width=420,height=700");
+ if(!receipt) {
+  medikaToast("Izinkan pop-up untuk mencetak struk.");
+  return;
+ }
+ receipt.document.write(`
+  <html><head><title>Struk ${order.id}</title>
+  <style>
+   body{font-family:Arial,sans-serif;padding:25px;color:#24382d}
+   h2{text-align:center;letter-spacing:2px}
+   .line{border-top:1px dashed #777;margin:15px 0}
+   .flex{display:flex;justify-content:space-between;margin:8px 0;font-size:13px}
+   p{font-size:12px;line-height:1.6}
+   @media print{button{display:none}}
+  </style></head><body>
+  <h2>MEDIKA</h2><p style="text-align:center">Your Everyday Wellness Partner</p>
+  <div class="line"></div>
+  <p>Nomor: ${order.id}<br>Tanggal: ${new Date(order.date).toLocaleString("id-ID")}<br>
+  Penerima: ${order.customerName}<br>Pembayaran: ${order.payment}</p>
+  <div class="line"></div>
+  ${order.items.map(i=>`<div class="flex"><span>${i.name} × ${i.qty}</span><b>${medikaRupiah(i.price*i.qty)}</b></div>`).join("")}
+  <div class="line"></div>
+  <div class="flex"><b>Total</b><b>${medikaRupiah(order.total)}</b></div>
+  <p>Status: ${order.status}</p>
+  <div class="line"></div>
+  <p style="text-align:center">Terima kasih telah berbelanja di MEDIKA.</p>
+  <button onclick="window.print()">Cetak Struk</button>
+  </body></html>`);
+ receipt.document.close();
+}
+
+/* =====================================================
+   11. KONSULTASI WHATSAPP
+===================================================== */
+
+function openConsultation() {
+ const phone="6281336019326";
+ const message=encodeURIComponent("Halo MEDIKA, saya ingin bertanya mengenai informasi produk.");
+ window.open("https://wa.me/"+phone+"?text="+message,"_blank");
+}
+
+/* =====================================================
+   12. INISIALISASI
+===================================================== */
+
+document.addEventListener("DOMContentLoaded",function(){
+ medikaRenderProducts("Semua");
+ medikaUpdateCartCount();
+ medikaUpdateAccount();
+});
+
+/* Jalankan juga langsung karena script berada di bawah halaman */
+medikaRenderProducts("Semua");
+medikaUpdateCartCount();
+medikaUpdateAccount();
+</script>
+
+<!-- BAGIAN 3 DAN 4 AKAN DITEMPEL DI SINI -->
+
+<!-- =====================================================
+     MEDIKA — BAGIAN 3/4
+     LOGIN STAFF + ADMIN DASHBOARD
+     Tempel sebelum </body>
+===================================================== -->
+
+<style>
+/* STAFF ACCESS */
+.md-overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(5,20,14,.76);backdrop-filter:blur(7px);padding:18px;overflow:auto;align-items:center;justify-content:center}
+.md-overlay.active{display:flex}
+.md-panel{width:min(1100px,100%);max-height:92vh;overflow:auto;background:#f8f6ef;border-radius:22px;color:#183c2c;box-shadow:0 25px 80px #0005}
+.md-head{display:flex;justify-content:space-between;align-items:center;padding:20px 24px;background:#123d2d;color:#fff;position:sticky;top:0;z-index:3}
+.md-head h2{font-family:Georgia,serif;margin:0;font-size:23px}
+.md-close{border:0;background:#ffffff20;color:white;border-radius:50%;width:36px;height:36px;font-size:22px;cursor:pointer}
+.md-body{padding:24px}
+.md-loginbox{max-width:440px;margin:auto;padding:30px 10px}
+.md-loginbox h2{text-align:center;font-family:Georgia,serif;font-size:30px;margin:0 0 8px}
+.md-muted{color:#718076;font-size:13px}
+.md-field{margin:15px 0}
+.md-field label{display:block;font-size:12px;font-weight:700;margin-bottom:7px}
+.md-field input,.md-field select,.md-field textarea{width:100%;padding:12px 13px;border:1px solid #d9dfd7;border-radius:10px;background:white;color:#183c2c;font:inherit;box-sizing:border-box}
+.md-btn{border:0;border-radius:10px;padding:11px 16px;background:#174a35;color:white;font-weight:700;cursor:pointer}
+.md-btn:hover{filter:brightness(1.1)}
+.md-btn.gold{background:#b58a42;color:#fff}
+.md-btn.light{background:#e8eee8;color:#174a35}
+.md-btn.danger{background:#a63d35}
+.md-btn.small{padding:7px 10px;font-size:12px}
+.md-staff-tabs{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:22px 0}
+.md-staff-tabs button{padding:13px 8px;border:1px solid #dce2da;border-radius:10px;background:white;color:#174a35;font-weight:700;cursor:pointer}
+.md-staff-tabs button.active{background:#174a35;color:white}
+.md-admin-layout{display:grid;grid-template-columns:210px 1fr;min-height:590px}
+.md-sidebar{background:#123d2d;padding:18px 12px;color:white}
+.md-sidebar .md-brand{font-family:Georgia,serif;font-size:23px;padding:8px 10px 20px}
+.md-sidebar button{display:block;width:100%;text-align:left;border:0;background:transparent;color:#dce9df;padding:12px;border-radius:9px;margin:3px 0;cursor:pointer;font-size:13px}
+.md-sidebar button.active,.md-sidebar button:hover{background:#ffffff1c;color:#fff}
+.md-admin-main{padding:22px;min-width:0}
+.md-admin-top{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.md-admin-top h2{font-family:Georgia,serif;margin:0;font-size:25px}
+.md-stat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.md-stat{background:white;border:1px solid #e7e9e2;border-radius:14px;padding:16px}
+.md-stat span{display:block;color:#7b887e;font-size:12px}
+.md-stat strong{display:block;font-size:23px;margin-top:8px;color:#174a35}
+.md-admin-card{background:white;border:1px solid #e7e9e2;border-radius:14px;padding:17px;margin-bottom:16px;min-width:0}
+.md-admin-card h3{margin:0 0 14px;font-size:16px}
+.md-table-wrap{overflow:auto}
+.md-table{width:100%;border-collapse:collapse;font-size:12px;min-width:650px}
+.md-table th,.md-table td{padding:11px 9px;text-align:left;border-bottom:1px solid #edf0e9;vertical-align:middle}
+.md-table th{color:#788579;font-size:11px;text-transform:uppercase}
+.md-product-mini{display:flex;align-items:center;gap:9px;min-width:160px}
+.md-product-mini img{width:43px;height:43px;object-fit:cover;border-radius:8px;background:#eee}
+.md-pill{display:inline-block;padding:5px 8px;border-radius:20px;font-size:10px;font-weight:700;background:#e8f2e9;color:#24633c}
+.md-pill.warn{background:#fff1d9;color:#95651b}
+.md-pill.bad{background:#fbe7e5;color:#a43d35}
+.md-admin-actions{display:flex;gap:5px;flex-wrap:wrap}
+.md-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 14px}
+.md-alert{padding:12px 14px;border-radius:10px;background:#fff3dc;color:#865c1c;font-size:12px;margin-bottom:12px}
+.md-empty{text-align:center;padding:35px;color:#849087}
+.md-chart{width:100%;height:230px;display:block;max-width:100%}
+@media(max-width:760px){
+ .md-admin-layout{grid-template-columns:1fr}
+ .md-sidebar{display:flex;overflow:auto;gap:5px;padding:9px}
+ .md-sidebar .md-brand{display:none}
+ .md-sidebar button{white-space:nowrap;width:auto;margin:0}
+ .md-stat-grid{grid-template-columns:repeat(2,1fr)}
+ .md-admin-main{padding:14px}
+}
+@media(max-width:480px){.md-form-grid{grid-template-columns:1fr}.md-body{padding:15px}}
+/* FULL PAGE DASHBOARDS — bukan modal kecil */
+#medikaAdminModal.md-overlay,
+#medikaCashierModal.md-overlay{padding:0;align-items:stretch;justify-content:stretch}
+#medikaAdminModal .md-panel,
+#medikaCashierModal .md-panel{
+ width:100%;max-width:none;height:100vh;height:100dvh;max-height:none;
+ border-radius:0;overflow:auto;box-shadow:none
+}
+#medikaAdminModal .md-admin-layout{min-height:calc(100dvh - 74px)}
+#medikaAdminModal .md-admin-main{min-height:calc(100dvh - 74px)}
+#medikaCashierModal .md4-wrap{min-height:calc(100dvh - 74px);padding:clamp(14px,2vw,30px)}
+/* Dashboard pelanggan juga memenuhi layar */
+.medika-modal.customer-dashboard{padding:0;align-items:stretch;justify-content:stretch}
+.medika-modal.customer-dashboard .medika-panel{
+ width:100%;max-width:none;height:100vh;height:100dvh;max-height:none;
+ border-radius:0;padding:clamp(22px,4vw,48px);overflow:auto
+}
+.medika-customer-home{max-width:1100px;margin:20px auto}
+.medika-customer-actions{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:28px}
+.medika-customer-action{border:1px solid #e3e9e1;border-radius:15px;background:#fff;padding:22px;text-align:left;cursor:pointer;color:#20382c}
+.medika-customer-action strong{display:block;font-size:16px;margin-bottom:7px;color:#173f2e}
+.medika-customer-action span{font-size:12px;color:#788379;line-height:1.6}
+@media(max-width:700px){.medika-customer-actions{grid-template-columns:1fr}}
+@media(max-width:760px){
+ #medikaAdminModal .md-admin-layout{min-height:calc(100dvh - 65px)}
+ #medikaAdminModal .md-sidebar{position:sticky;top:0;z-index:4}
+}
+
+/* FOTO PRODUK KASIR: ukuran konsisten dan fallback gambar */
+#medikaCashierModal .md4-product-photo{height:132px;background:#f0f2ed;overflow:hidden}
+#medikaCashierModal .md4-product-photo img{display:block;width:100%;height:100%;object-fit:cover}
+
+</style>
+
+<div class="md-overlay" id="medikaStaffLoginModal">
+ <div class="md-panel" style="max-width:520px">
+  <div class="md-head">
+   <h2>MEDIKA <span style="font-size:12px;font-family:Arial;font-weight:400">STAFF ACCESS</span></h2>
+   <button class="md-close" onclick="medikaCloseOverlay('medikaStaffLoginModal')">×</button>
+  </div>
+  <div class="md-body">
+   <div class="md-loginbox">
+    <h2>Selamat Datang</h2>
+    <p class="md-muted" style="text-align:center">Masuk ke sistem pengelolaan Apotek MEDIKA</p>
+    <div class="md-staff-tabs">
+     <button class="active" id="mdTabAdmin" onclick="medikaChooseStaff('admin')">Admin</button>
+     <button id="mdTabCashier" onclick="medikaChooseStaff('cashier')">Kasir</button>
+    </div>
+    <form onsubmit="medikaStaffLogin(event)">
+     <div class="md-field"><label>EMAIL</label><input id="mdStaffEmail" type="email" placeholder="Masukkan email" required></div>
+     <div class="md-field"><label>PASSWORD</label><input id="mdStaffPassword" type="password" placeholder="Masukkan password" required></div>
+     <p id="mdLoginError" style="color:#a43d35;font-size:12px;min-height:16px"></p>
+     <button class="md-btn" style="width:100%;padding:14px" type="submit">Masuk ke Akun</button>
+    </form>
+    <p class="md-muted" style="margin-top:18px;text-align:center">Akses staf untuk prototipe lokal MEDIKA.</p>
+   </div>
+  </div>
+ </div>
+</div>
+
+<div class="md-overlay" id="medikaAdminModal">
+ <div class="md-panel">
+  <div class="md-head">
+   <h2>MEDIKA <span style="font-size:12px;font-family:Arial;font-weight:400">ADMINISTRATION</span></h2>
+   <button class="md-close" onclick="medikaStaffLogout()">×</button>
+  </div>
+  <div class="md-admin-layout">
+   <aside class="md-sidebar">
+    <div class="md-brand">MEDIKA.</div>
+    <button class="active" data-md-section="overview" onclick="medikaAdminSection('overview',this)">▦ &nbsp; Dashboard</button>
+    <button data-md-section="products" onclick="medikaAdminSection('products',this)">▤ &nbsp; Produk</button>
+    <button data-md-section="inventory" onclick="medikaAdminSection('inventory',this)">▣ &nbsp; Stok & Kedaluwarsa</button>
+    <button data-md-section="orders" onclick="medikaAdminSection('orders',this)">▧ &nbsp; Pesanan</button>
+    <button data-md-section="customers" onclick="medikaAdminSection('customers',this)">♙ &nbsp; Pelanggan</button>
+    <button data-md-section="reports" onclick="medikaAdminSection('reports',this)">▥ &nbsp; Laporan</button>
+    <button onclick="medikaStaffLogout()" style="color:#f4c5bd;margin-top:20px">↪ &nbsp; Keluar</button>
+   </aside>
+   <main class="md-admin-main" id="medikaAdminContent"></main>
+  </div>
+ </div>
+</div>
+
+<div class="md-overlay" id="medikaProductFormModal">
+ <div class="md-panel" style="max-width:650px">
+  <div class="md-head"><h2 id="mdProductFormTitle">Tambah Produk</h2><button class="md-close" onclick="medikaCloseOverlay('medikaProductFormModal')">×</button></div>
+  <div class="md-body">
+   <form onsubmit="medikaSaveAdminProduct(event)">
+    <input type="hidden" id="mdProductId">
+    <div class="md-form-grid">
+     <div class="md-field"><label>NAMA PRODUK</label><input id="mdProductName" required></div>
+     <div class="md-field"><label>KATEGORI</label><select id="mdProductCategory"><option>Obat Bebas</option><option>Vitamin & Suplemen</option><option>Perawatan Tubuh</option><option>Alat Kesehatan</option></select></div>
+     <div class="md-field"><label>HARGA (RP)</label><input id="mdProductPrice" type="number" min="0" required></div>
+     <div class="md-field"><label>STOK</label><input id="mdProductStock" type="number" min="0" required></div>
+     <div class="md-field"><label>TANGGAL KEDALUWARSA</label><input id="mdProductExpiry" type="date" required></div>
+     <div class="md-field"><label>STATUS</label><select id="mdProductActive"><option value="true">Aktif</option><option value="false">Nonaktif</option></select></div>
+     <div class="md-field" style="grid-column:1/-1"><label>URL FOTO PRODUK</label><input id="mdProductImage" type="url" placeholder="https://..."></div>
+     <div class="md-field" style="grid-column:1/-1"><label>DESKRIPSI</label><textarea id="mdProductDescription" rows="3"></textarea></div>
+    </div>
+    <div style="display:flex;justify-content:flex-end;gap:8px">
+     <button type="button" class="md-btn light" onclick="medikaCloseOverlay('medikaProductFormModal')">Batal</button>
+     <button type="submit" class="md-btn gold">Simpan Produk</button>
+    </div>
+   </form>
+  </div>
+ </div>
+</div>
+
+<script>
+/* ---------- MEDIKA ADMIN SYSTEM ---------- */
+window.mdStaffRole = "admin";
+window.mdAdminCurrentSection = "overview";
+
+function mdGet(key,fallback){
+ try{
+  const v=JSON.parse(localStorage.getItem(key));
+  return v===null?fallback:v;
+ }catch(e){return fallback;}
+}
+function mdSet(key,value){localStorage.setItem(key,JSON.stringify(value))}
+function mdMoney(value){
+ return "Rp"+Number(value||0).toLocaleString("id-ID");
+}
+function mdProducts(){
+ if(!Array.isArray(window.medikaProducts)) window.medikaProducts=[];
+ return window.medikaProducts;
+}
+function mdSaveProducts(){
+ mdSet("medika_products",mdProducts());
+}
+function mdDateStatus(date){
+ if(!date)return {label:"Belum diatur",cls:"warn"};
+ const today=new Date();today.setHours(0,0,0,0);
+ const exp=new Date(date+"T00:00:00");
+ const days=Math.ceil((exp-today)/86400000);
+ if(days<0)return {label:"Kedaluwarsa",cls:"bad"};
+ if(days<=90)return {label:"Segera kedaluwarsa",cls:"warn"};
+ return {label:"Aman",cls:""};
+}
+function medikaCloseOverlay(id){
+ const el=document.getElementById(id);
+ if(el)el.classList.remove("active");
+}
+function medikaOpenStaffLogin(){
+ const modal=document.getElementById("medikaStaffLoginModal");
+ if(!modal)return;
+ /* Selalu mulai dari form staf yang bersih, tanpa data pelanggan sebelumnya. */
+ document.getElementById("mdStaffEmail").value="";
+ document.getElementById("mdStaffPassword").value="";
+ document.getElementById("mdLoginError").textContent="";
+ medikaChooseStaff("admin");
+ modal.classList.add("active");
+}
+function medikaChooseStaff(role){
+ if(role!=="admin"&&role!=="cashier")role="admin";
+ mdStaffRole=role;
+ ["Admin","Cashier"].forEach(x=>{
+  const b=document.getElementById("mdTab"+x);
+  if(b)b.classList.toggle("active",x.toLowerCase()===role);
+ });
+ document.getElementById("mdLoginError").textContent="";
+ document.getElementById("mdStaffEmail").value="";
+ document.getElementById("mdStaffPassword").value="";
+}
+function medikaStaffLogin(event){
+ event.preventDefault();
+ const email=document.getElementById("mdStaffEmail").value.trim().toLowerCase();
+ const password=document.getElementById("mdStaffPassword").value;
+ const accounts={
+  admin:{email:"admin@gmail.com",password:"admin123",name:"Administrator"},
+  cashier:{email:"kasir@gmail.com",password:"kasir123",name:"Kasir MEDIKA"}
+ };
+ const acc=accounts[mdStaffRole];
+ if(!acc||email!==acc.email||password!==acc.password){
+  document.getElementById("mdLoginError").textContent="Email atau password tidak sesuai.";
+  return;
+ }
+ window.medikaSession={id:mdStaffRole==="admin"?"staff-admin":"staff-cashier",name:acc.name,email:acc.email,role:mdStaffRole};
+ mdSet("medika_session",window.medikaSession);
+ medikaCloseOverlay("medikaStaffLoginModal");
+ if(mdStaffRole==="admin")medikaOpenAdmin();
+ else if(typeof medikaOpenCashier==="function")medikaOpenCashier();
+}
+function medikaOpenAdmin(){
+ medikaCloseOverlay("medikaCashierModal");
+ document.getElementById("medikaAdminModal").classList.add("active");
+ medikaAdminSection("overview");
+}
+function medikaAdminSection(section,button){
+ mdAdminCurrentSection=section;
+ document.querySelectorAll("#medikaAdminModal [data-md-section]").forEach(b=>b.classList.remove("active"));
+ if(button)button.classList.add("active");
+ else{
+  const active=document.querySelector('#medikaAdminModal [data-md-section="'+section+'"]');
+  if(active)active.classList.add("active");
+ }
+ const content=document.getElementById("medikaAdminContent");
+ if(section==="overview")content.innerHTML=medikaAdminOverview();
+ if(section==="products")content.innerHTML=medikaAdminProducts();
+ if(section==="inventory")content.innerHTML=medikaAdminInventory();
+ if(section==="orders")content.innerHTML=medikaAdminOrders();
+ if(section==="customers")content.innerHTML=medikaAdminCustomers();
+ if(section==="reports")content.innerHTML=medikaAdminReports();
+ if(section==="overview") requestAnimationFrame(()=>medikaDrawAdminChart());
+}
+function medikaAdminOverview(){
+ const p=mdProducts(),orders=mdGet("medika_orders",[]);
+ const stock=p.reduce((s,x)=>s+Number(x.stock||0),0);
+ const low=p.filter(x=>Number(x.stock||0)<=5).length;
+ const revenue=orders.reduce((s,o)=>s+Number(o.total||o.grandTotal||0),0);
+ return `<div class="md-admin-top"><div><p class="md-muted">OVERVIEW / ADMIN</p><h2>Dashboard Admin</h2><p class="md-muted">Ringkasan operasional Apotek MEDIKA</p></div><button class="md-btn gold" onclick="medikaOpenProductForm()">+ Tambah Produk</button></div>
+ <div class="md-stat-grid">
+  <div class="md-stat"><span>Total Produk</span><strong>${p.length}</strong></div>
+  <div class="md-stat"><span>Total Stok</span><strong>${stock}</strong></div>
+  <div class="md-stat"><span>Stok Menipis</span><strong>${low}</strong></div>
+  <div class="md-stat"><span>Total Pesanan</span><strong>${orders.length}</strong></div>
+ </div>
+ <div class="md-admin-card">
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:8px"><h3 style="margin:0">Grafik Penjualan 7 Hari Terakhir</h3><span class="md-muted">Pesanan pelanggan + transaksi kasir</span></div>
+  <canvas id="mdAdminSalesChart" class="md-chart" aria-label="Grafik penjualan tujuh hari terakhir"></canvas>
+ </div>
+ <div class="md-admin-card"><h3>Perhatian Inventaris</h3>
+  <div class="md-alert">${low} produk memiliki stok 5 atau kurang. Periksa menu Stok & Kedaluwarsa secara berkala.</div>
+  <p class="md-muted">Nilai penjualan tersimpan di perangkat ini: <b>${mdMoney(revenue)}</b>. Data ini berasal dari pesanan yang tercatat di browser.</p>
+ </div>
+ <div class="md-admin-card"><h3>Produk Terbaru</h3>${p.slice(-5).reverse().map(x=>`<p style="padding:8px 0;border-bottom:1px solid #eee;margin:0">${x.name||"Produk"} <span style="float:right;color:#718076">${mdMoney(x.price)}</span></p>`).join("")||'<div class="md-empty">Belum ada produk.</div>'}</div>`;
+}
+function medikaDrawAdminChart(){
+ const canvas=document.getElementById("mdAdminSalesChart");
+ if(!canvas)return;
+ const ctx=canvas.getContext("2d");
+ const rect=canvas.getBoundingClientRect();
+ const w=Math.max(320,rect.width||700),h=230,dpr=window.devicePixelRatio||1;
+ canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);
+ canvas.style.height=h+"px";ctx.setTransform(dpr,0,0,dpr,0,0);
+ const days=[];const today=new Date();today.setHours(0,0,0,0);
+ for(let i=6;i>=0;i--){const d=new Date(today);d.setDate(today.getDate()-i);days.push(d);}
+ const totals=days.map(day=>{
+  const key=day.toDateString();let total=0;
+  const orders=mdGet("medika_orders",[]);
+  orders.forEach(o=>{const raw=o.createdAt||o.date||o.timestamp||o.created_at;const d=raw?new Date(raw):null;if(d&&!isNaN(d)&&d.toDateString()===key)total+=Number(o.total||o.grandTotal||0);});
+  const tx=mdGet("medika_cashier_transactions",[]);
+  tx.forEach(t=>{const d=t.timestamp?new Date(Number(t.timestamp)):new Date(t.date||"");if(d&&!isNaN(d)&&d.toDateString()===key)total+=Number(t.total||0);});
+  return total;
+ });
+ const max=Math.max(1,...totals),left=48,right=12,top=16,bottom=36,plotW=w-left-right,plotH=h-top-bottom;
+ ctx.clearRect(0,0,w,h);ctx.font="11px Arial";ctx.textAlign="right";ctx.textBaseline="middle";
+ for(let i=0;i<=4;i++){const y=top+plotH-(plotH*i/4);ctx.strokeStyle="#e9eee8";ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(w-right,y);ctx.stroke();ctx.fillStyle="#819087";ctx.fillText("Rp"+Math.round(max*i/4).toLocaleString("id-ID"),left-7,y);}
+ const slot=plotW/7,bw=Math.min(34,slot*.52);
+ totals.forEach((v,i)=>{const bh=(v/max)*plotH,x=left+i*slot+(slot-bw)/2,y=top+plotH-bh;ctx.fillStyle="#315c45";ctx.beginPath();ctx.roundRect(x,y,bw,Math.max(2,bh),5);ctx.fill();ctx.fillStyle="#738176";ctx.textAlign="center";ctx.textBaseline="top";ctx.fillText(days[i].toLocaleDateString("id-ID",{day:"2-digit",month:"short"}),left+i*slot+slot/2,top+plotH+9);});
+ if(totals.every(v=>v===0)){ctx.fillStyle="#89958b";ctx.textAlign="center";ctx.textBaseline="middle";ctx.fillText("Belum ada penjualan pada periode ini",left+plotW/2,top+plotH/2);}
+}
+window.addEventListener("resize",()=>{if(document.getElementById("medikaAdminModal")?.classList.contains("active")&&mdAdminCurrentSection==="overview")medikaDrawAdminChart();});
+
+function medikaAdminProducts(){
+ const p=mdProducts();
+ return `<div class="md-admin-top"><div><p class="md-muted">CATALOG MANAGEMENT</p><h2>Manajemen Produk</h2></div><button class="md-btn gold" onclick="medikaOpenProductForm()">+ Tambah Produk</button></div>
+ <div class="md-admin-card"><div class="md-table-wrap"><table class="md-table"><thead><tr><th>Produk</th><th>Kategori</th><th>Harga</th><th>Stok</th><th>Kedaluwarsa</th><th>Aksi</th></tr></thead><tbody>
+ ${p.map(x=>{const st=mdDateStatus(x.expiry);return `<tr><td><div class="md-product-mini"><img src="${x.image||x.img||"https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=100"}" onerror="this.onerror=null;this.src='https://placehold.co/100x100/f0f1ed/31533d?text=MEDIKA'"><b>${x.name||"-"}</b></div></td><td>${x.category||"-"}</td><td>${mdMoney(x.price)}</td><td>${x.stock??0}</td><td><span class="md-pill ${st.cls}">${x.expiry||"-"} · ${st.label}</span></td><td><div class="md-admin-actions"><button class="md-btn small light" onclick="medikaOpenProductForm('${x.id}')">Edit</button><button class="md-btn small danger" onclick="medikaDeleteProduct('${x.id}')">Hapus</button></div></td></tr>`}).join("")||'<tr><td colspan="6" class="md-empty">Belum ada produk.</td></tr>'}
+ </tbody></table></div></div>`;
+}
+function medikaOpenProductForm(id){
+ const product=id?mdProducts().find(x=>String(x.id)===String(id)):null;
+ document.getElementById("mdProductFormTitle").textContent=product?"Edit Produk":"Tambah Produk";
+ document.getElementById("mdProductId").value=product?.id||"";
+ document.getElementById("mdProductName").value=product?.name||"";
+ document.getElementById("mdProductCategory").value=product?.category||"Obat Bebas";
+ document.getElementById("mdProductPrice").value=product?.price||"";
+ document.getElementById("mdProductStock").value=product?.stock??"";
+ document.getElementById("mdProductExpiry").value=product?.expiry||product?.expiry_date||"";
+ document.getElementById("mdProductActive").value=String(product?.active!==false);
+ document.getElementById("mdProductImage").value=product?.image||product?.img||"";
+ document.getElementById("mdProductDescription").value=product?.description||"";
+ document.getElementById("medikaProductFormModal").classList.add("active");
+}
+function medikaSaveAdminProduct(event){
+ event.preventDefault();
+ const id=document.getElementById("mdProductId").value;
+ const data={
+  id:id||("MD"+Date.now()),
+  name:document.getElementById("mdProductName").value.trim(),
+  category:document.getElementById("mdProductCategory").value,
+  price:Number(document.getElementById("mdProductPrice").value),
+  stock:Number(document.getElementById("mdProductStock").value),
+  expiry:document.getElementById("mdProductExpiry").value,
+  active:document.getElementById("mdProductActive").value==="true",
+  image:document.getElementById("mdProductImage").value.trim(),
+  description:document.getElementById("mdProductDescription").value.trim()
+ };
+ const p=mdProducts(),index=p.findIndex(x=>String(x.id)===String(id));
+ if(index>=0)p[index]={...p[index],...data};else p.push(data);
+ mdSaveProducts();
+ medikaCloseOverlay("medikaProductFormModal");
+ medikaAdminSection("products");
+ if(typeof medikaRenderProducts==="function")medikaRenderProducts();
+ alert("Produk berhasil disimpan.");
+}
+function medikaDeleteProduct(id){
+ if(!confirm("Yakin ingin menghapus produk ini?"))return;
+ window.medikaProducts=mdProducts().filter(x=>String(x.id)!==String(id));
+ mdSaveProducts();medikaAdminSection("products");
+ if(typeof medikaRenderProducts==="function")medikaRenderProducts();
+}
+function medikaAdminInventory(){
+ const p=mdProducts();
+ const low=p.filter(x=>Number(x.stock||0)<=5);
+ const exp=p.filter(x=>mdDateStatus(x.expiry||x.expiry_date).cls!=="");
+ return `<div class="md-admin-top"><div><p class="md-muted">INVENTORY CONTROL</p><h2>Stok & Kedaluwarsa</h2></div><button class="md-btn" onclick="medikaAdminSection('products')">Kelola Produk</button></div>
+ <div class="md-stat-grid"><div class="md-stat"><span>Stok Menipis</span><strong>${low.length}</strong></div><div class="md-stat"><span>Perlu Diperiksa</span><strong>${exp.length}</strong></div><div class="md-stat"><span>Jumlah Produk</span><strong>${p.length}</strong></div><div class="md-stat"><span>Total Unit</span><strong>${p.reduce((s,x)=>s+Number(x.stock||0),0)}</strong></div></div>
+ <div class="md-admin-card"><h3>Daftar Pemeriksaan</h3><div class="md-table-wrap"><table class="md-table"><thead><tr><th>Nama Produk</th><th>Stok</th><th>Tanggal Kedaluwarsa</th><th>Status</th><th>Aksi</th></tr></thead><tbody>
+ ${p.map(x=>{const st=mdDateStatus(x.expiry||x.expiry_date);const lowStock=Number(x.stock||0)<=5;return `<tr><td>${x.name}</td><td>${x.stock??0}</td><td>${x.expiry||x.expiry_date||"-"}</td><td>${lowStock?'<span class="md-pill warn">Stok menipis</span> ':''}<span class="md-pill ${st.cls}">${st.label}</span></td><td><button class="md-btn small light" onclick="medikaOpenProductForm('${x.id}')">Perbarui</button></td></tr>`}).join("")||'<tr><td colspan="5" class="md-empty">Belum ada data.</td></tr>'}
+ </tbody></table></div></div>
+ <p class="md-muted">Catatan: pastikan tanggal kedaluwarsa dan jumlah stok diperiksa berdasarkan kemasan dan catatan fisik apotek.</p>`;
+}
+function medikaAdminOrders(){
+ const orders=mdGet("medika_orders",[]);
+ return `<div class="md-admin-top"><div><p class="md-muted">ORDER MANAGEMENT</p><h2>Pesanan Pelanggan</h2></div></div>
+ <div class="md-admin-card"><div class="md-table-wrap"><table class="md-table"><thead><tr><th>Nomor</th><th>Pelanggan</th><th>Tanggal</th><th>Total</th><th>Status</th><th>Ubah Status</th></tr></thead><tbody>
+ ${orders.map((o,i)=>`<tr><td>${o.orderNumber||o.id||("ORD-"+(i+1))}</td><td>${o.customerName||o.name||"Pelanggan"}</td><td>${o.date||o.createdAt||"-"}</td><td>${mdMoney(o.total||o.grandTotal)}</td><td><span class="md-pill">${o.status||"Diproses"}</span></td><td><select onchange="medikaUpdateOrderStatus(${i},this.value)" style="padding:7px;border:1px solid #ddd;border-radius:7px"><option ${o.status==="Diproses"?"selected":""}>Diproses</option><option ${o.status==="Dikemas"?"selected":""}>Dikemas</option><option ${o.status==="Dikirim"?"selected":""}>Dikirim</option><option ${o.status==="Selesai"?"selected":""}>Selesai</option><option ${o.status==="Dibatalkan"?"selected":""}>Dibatalkan</option></select></td></tr>`).join("")||'<tr><td colspan="6" class="md-empty">Belum ada pesanan pelanggan.</td></tr>'}
+ </tbody></table></div></div>`;
+}
+function medikaUpdateOrderStatus(index,status){
+ const orders=mdGet("medika_orders",[]);
+ if(!orders[index])return;
+ orders[index].status=status;mdSet("medika_orders",orders);
+ medikaAdminSection("orders");
+}
+function medikaAdminCustomers(){
+ const customers=mdGet("medika_customers",[]);
+ return `<div class="md-admin-top"><div><p class="md-muted">CUSTOMER DIRECTORY</p><h2>Data Pelanggan</h2></div></div>
+ <div class="md-admin-card"><div class="md-table-wrap"><table class="md-table"><thead><tr><th>Nama</th><th>Email</th><th>Telepon</th><th>Alamat</th></tr></thead><tbody>
+ ${customers.map(c=>`<tr><td>${c.name||"-"}</td><td>${c.email||"-"}</td><td>${c.phone||"-"}</td><td>${c.address||"-"}</td></tr>`).join("")||'<tr><td colspan="4" class="md-empty">Data pelanggan akan muncul jika tersimpan pada sistem pelanggan.</td></tr>'}
+ </tbody></table></div></div>`;
+}
+function medikaAdminReports(){
+ const orders=mdGet("medika_orders",[]);
+ const tx=mdGet("medika_cashier_transactions",[]);
+ const totalOrders=orders.reduce((s,o)=>s+Number(o.total||o.grandTotal||0),0);
+ const totalCash=tx.reduce((s,t)=>s+Number(t.total||0),0);
+ const all=totalOrders+totalCash;
+ return `<div class="md-admin-top"><div><p class="md-muted">BUSINESS INSIGHTS</p><h2>Laporan Penjualan</h2></div></div>
+ <div class="md-stat-grid"><div class="md-stat"><span>Pesanan Online</span><strong>${orders.length}</strong></div><div class="md-stat"><span>Transaksi Kasir</span><strong>${tx.length}</strong></div><div class="md-stat"><span>Penjualan Online</span><strong style="font-size:17px">${mdMoney(totalOrders)}</strong></div><div class="md-stat"><span>Penjualan Kasir</span><strong style="font-size:17px">${mdMoney(totalCash)}</strong></div></div>
+ <div class="md-admin-card"><h3>Ringkasan Penjualan Tercatat</h3><p style="font-size:27px;font-weight:700;color:#174a35">${mdMoney(all)}</p><p class="md-muted">Total gabungan pesanan online dan transaksi kasir yang tersimpan pada browser ini.</p></div>
+ <div class="md-admin-card"><h3>Transaksi Terbaru</h3>${tx.slice(-8).reverse().map(t=>`<p style="padding:8px 0;border-bottom:1px solid #eee">${t.invoice||"Transaksi"} <span style="float:right">${mdMoney(t.total)}</span></p>`).join("")||'<div class="md-empty">Belum ada transaksi kasir.</div>'}</div>`;
+}
+function medikaStaffLogout(){
+ if(!confirm("Yakin ingin keluar dari akun staf?"))return;
+ localStorage.removeItem("medika_session");
+ window.medikaSession=null;
+ medikaCloseOverlay("medikaAdminModal");
+ medikaCloseOverlay("medikaCashierModal");
+ medikaCloseOverlay("medikaStaffLoginModal");
+ if(typeof medikaUpdateAccount==="function")medikaUpdateAccount();
+}
+function openMedikaAccess(){
+ const session=mdGet("medika_session",null);
+ if(session&&session.role==="admin"){medikaOpenAdmin();return;}
+ if(session&&session.role==="cashier"&&typeof medikaOpenCashier==="function"){medikaOpenCashier();return;}
+ medikaOpenStaffLogin();
+}
+</script>
+<!-- AKHIR BAGIAN 3 -->
+
+<!-- =====================================================
+ MEDIKA — BAGIAN 4/4
+ CASHIER DASHBOARD • POS • RECEIPT • REPORT
+===================================================== -->
+
+<style>
+.md4-wrap{padding:22px}
+.md4-top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px}
+.md4-top h2{font-family:Georgia,serif;margin:0;font-size:27px;color:#173e2e}
+.md4-muted{font-size:12px;color:#829087}
+.md4-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:18px}
+.md4-stat{background:#fff;border:1px solid #e8eae4;border-radius:14px;padding:16px}
+.md4-stat small{color:#7c897f}
+.md4-stat strong{display:block;font-size:21px;color:#174a35;margin-top:8px}
+.md4-card{background:white;border:1px solid #e7eae3;border-radius:15px;padding:17px;margin-bottom:16px}
+.md4-card h3{margin:0 0 14px;color:#174a35;font-size:16px}
+.md4-layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px}
+.md4-search{width:100%;padding:13px;border:1px solid #dce2da;border-radius:9px;margin-bottom:13px;box-sizing:border-box}
+.md4-products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:11px}
+.md4-product{border:1px solid #e8eae4;border-radius:12px;overflow:hidden;background:white}
+.md4-product img{width:100%;height:115px;object-fit:cover;background:#eee}
+.md4-product-info{padding:10px}
+.md4-product-info b{font-size:12px;display:block;min-height:30px;color:#234735}
+.md4-product-info small{font-size:10px;color:#829087}
+.md4-product-info strong{display:block;color:#174a35;margin:7px 0;font-size:13px}
+.md4-btn{border:0;border-radius:9px;background:#174a35;color:white;padding:10px 14px;font-weight:700;cursor:pointer}
+.md4-btn:hover{filter:brightness(1.1)}
+.md4-btn.gold{background:#b58a42}
+.md4-btn.light{background:#e8eee8;color:#174a35}
+.md4-btn.red{background:#a9443b}
+.md4-btn.full{width:100%}
+.md4-btn.small{padding:6px 9px;font-size:11px}
+.md4-cart{background:white;border:1px solid #e7eae3;border-radius:15px;padding:16px;align-self:start}
+.md4-cart h3{margin:0 0 14px}
+.md4-cart-line{padding:11px 0;border-bottom:1px solid #edf0e9}
+.md4-cart-line strong{font-size:12px}
+.md4-qty{display:flex;align-items:center;gap:8px;margin-top:8px}
+.md4-qty button{width:25px;height:25px;border:0;border-radius:6px;background:#e8eee8;color:#174a35;cursor:pointer}
+.md4-total{display:flex;justify-content:space-between;padding:8px 0;font-size:13px}
+.md4-total.final{border-top:1px solid #ddd;margin-top:8px;padding-top:14px;font-size:17px;color:#174a35;font-weight:800}
+.md4-field{margin:12px 0}
+.md4-field label{display:block;font-size:11px;font-weight:700;color:#66766b;margin-bottom:6px}
+.md4-field input,.md4-field select{width:100%;box-sizing:border-box;padding:11px;border:1px solid #dce2da;border-radius:9px;background:white}
+.md4-table-wrap{overflow:auto}
+.md4-table{width:100%;border-collapse:collapse;font-size:12px;min-width:620px}
+.md4-table th,.md4-table td{text-align:left;padding:11px;border-bottom:1px solid #edf0e9}
+.md4-table th{font-size:10px;color:#829087;text-transform:uppercase}
+.md4-overlay{display:none;position:fixed;inset:0;z-index:10020;background:#071c12c9;backdrop-filter:blur(6px);padding:16px;overflow:auto;align-items:center;justify-content:center}
+.md4-overlay.active{display:flex}
+.md4-modal{background:#f8f6ef;color:#173e2e;width:min(620px,100%);max-height:92vh;overflow:auto;border-radius:18px}
+.md4-modal-head{background:#123d2d;color:white;padding:17px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0}
+.md4-modal-head h3{margin:0;font-family:Georgia,serif}
+.md4-modal-head button{background:#ffffff20;color:white;border:0;border-radius:50%;width:34px;height:34px;font-size:20px;cursor:pointer}
+.md4-modal-body{padding:20px}
+.md4-receipt{background:white;color:#222;padding:25px;max-width:390px;margin:auto;font-family:monospace}
+.md4-receipt h2{text-align:center;font-family:Georgia,serif;letter-spacing:3px}
+.md4-receipt-row{display:flex;justify-content:space-between;gap:12px;padding:5px 0;font-size:12px}
+.md4-empty{text-align:center;padding:25px;color:#829087;font-size:13px}
+.md4-chart{width:100%;height:220px;display:block}
+@media(max-width:850px){
+ .md4-layout{grid-template-columns:1fr}
+ .md4-stats{grid-template-columns:repeat(2,1fr)}
+}
+@media(max-width:520px){
+ .md4-wrap{padding:12px}
+ .md4-products{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media print{
+ body *{visibility:hidden!important}
+ #md4Receipt,#md4Receipt *{visibility:visible!important}
+ #md4Receipt{position:absolute;left:0;top:0;width:100%;max-width:100%;box-shadow:none}
+}
+</style>
+
+<!-- DASHBOARD KASIR -->
+<div class="md-overlay" id="medikaCashierModal">
+ <div class="md-panel">
+  <div class="md-head">
+   <h2>MEDIKA <span style="font:12px Arial">CASHIER SYSTEM</span></h2>
+   <button class="md-close" onclick="medikaCashierLogout()">×</button>
+  </div>
+
+  <div class="md4-wrap">
+   <div class="md4-top">
+    <div>
+     <p class="md4-muted">POINT OF SALE / KASIR</p>
+     <h2>Dashboard Kasir</h2>
+     <p class="md4-muted">Selamat bekerja, <b id="md4CashierName">Kasir MEDIKA</b></p>
+    </div>
+    <div class="md4-top-actions" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap">
+     <button class="md4-btn light" onclick="md4OpenHistory()">Riwayat Transaksi</button>
+     <button class="md4-btn" onclick="medikaCashierLogout()" style="background:#8b342b;color:#fff;border:1px solid #8b342b">↪ Keluar Akun</button>
+    </div>
+   </div>
+
+   <div class="md4-stats">
+    <div class="md4-stat"><small>Transaksi Hari Ini</small><strong id="md4Count">0</strong></div>
+    <div class="md4-stat"><small>Penjualan Hari Ini</small><strong id="md4Sales">Rp0</strong></div>
+    <div class="md4-stat"><small>Barang Terjual</small><strong id="md4Items">0</strong></div>
+    <div class="md4-stat"><small>Produk Tersedia</small><strong id="md4Available">0</strong></div>
+   </div>
+
+   <div class="md4-card">
+    <h3>Grafik Penjualan 7 Hari Terakhir</h3>
+    <canvas id="md4Chart" class="md4-chart"></canvas>
+   </div>
+
+   <div class="md4-layout">
+    <div class="md4-card">
+     <h3>Daftar Produk</h3>
+     <input class="md4-search" id="md4Search" placeholder="Cari produk..." oninput="md4RenderProducts()">
+     <div class="md4-products" id="md4Products"></div>
+    </div>
+
+    <div class="md4-cart">
+     <h3>Keranjang Transaksi</h3>
+     <div id="md4CartItems"><div class="md4-empty">Belum ada produk.</div></div>
+
+     <div class="md4-field">
+      <label>DISKON (RP)</label>
+      <input id="md4Discount" type="number" min="0" value="0" oninput="md4UpdateTotal()">
+     </div>
+
+     <div class="md4-total"><span>Subtotal</span><b id="md4Subtotal">Rp0</b></div>
+     <div class="md4-total"><span>Diskon</span><b id="md4DiscountText">Rp0</b></div>
+     <div class="md4-total final"><span>Total</span><b id="md4GrandTotal">Rp0</b></div>
+
+     <div class="md4-field">
+      <label>METODE PEMBAYARAN</label>
+      <select id="md4Payment" onchange="md4PaymentChange()">
+       <option value="Tunai">Tunai</option>
+       <option value="QRIS">QRIS</option>
+       <option value="E-Wallet">E-Wallet</option>
+       <option value="COD">COD</option>
+      </select>
+     </div>
+
+     <div id="md4CashArea">
+      <div class="md4-field">
+       <label>UANG DITERIMA</label>
+       <input id="md4Paid" type="number" min="0" placeholder="Nominal pembayaran" oninput="md4UpdateTotal()">
+      </div>
+      <div class="md4-total"><span>Kembalian</span><b id="md4Change">Rp0</b></div>
+     </div>
+
+     <button class="md4-btn gold full" onclick="md4CompleteTransaction()">Selesaikan Transaksi</button>
+     <button class="md4-btn light full" style="margin-top:8px" onclick="md4ClearCart()">Kosongkan Keranjang</button>
+    </div>
+   </div>
+
+   <div class="md4-card">
+    <div class="md4-top">
+     <h3 style="margin:0">Transaksi Terbaru</h3>
+     <button class="md4-btn light small" onclick="md4OpenHistory()">Lihat Semua</button>
+    </div>
+    <div id="md4Recent"></div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- STRUK -->
+<div class="md4-overlay" id="md4ReceiptModal">
+ <div class="md4-modal">
+  <div class="md4-modal-head"><h3>Struk Pembayaran</h3><button onclick="md4Close('md4ReceiptModal')">×</button></div>
+  <div class="md4-modal-body">
+   <div class="md4-receipt" id="md4Receipt"></div>
+   <div style="display:flex;gap:9px;justify-content:center;margin-top:16px">
+    <button class="md4-btn gold" onclick="window.print()">Cetak Struk</button>
+    <button class="md4-btn light" onclick="md4Close('md4ReceiptModal')">Tutup</button>
+   </div>
+  </div>
+ </div>
+</div>
+
+<!-- RIWAYAT -->
+<div class="md4-overlay" id="md4HistoryModal">
+ <div class="md4-modal" style="width:min(950px,100%)">
+  <div class="md4-modal-head"><h3>Riwayat Transaksi</h3><button onclick="md4Close('md4HistoryModal')">×</button></div>
+  <div class="md4-modal-body" id="md4HistoryContent"></div>
+ </div>
+</div>
+
+<script>
+/* =====================================================
+   MEDIKA BAGIAN 4 JAVASCRIPT
+===================================================== */
+
+window.md4Cart=[];
+
+function md4Money(n){
+ return "Rp"+Number(n||0).toLocaleString("id-ID");
+}
+function md4GetProducts(){
+ if(!Array.isArray(window.medikaProducts))window.medikaProducts=[];
+ return window.medikaProducts;
+}
+function md4SaveProducts(){
+ localStorage.setItem("medika_products",JSON.stringify(md4GetProducts()));
+}
+function md4GetTransactions(){
+ try{return JSON.parse(localStorage.getItem("medika_cashier_transactions"))||[]}
+ catch(e){return []}
+}
+function md4SaveTransactions(data){
+ localStorage.setItem("medika_cashier_transactions",JSON.stringify(data));
+}
+function md4Close(id){
+ document.getElementById(id)?.classList.remove("active");
+}
+
+/* FUNGSI BUKA DASHBOARD KASIR */
+function medikaOpenCashier(){
+ md4Close("medikaAdminModal");
+
+ const modal=document.getElementById("medikaCashierModal");
+ if(!modal)return;
+
+ modal.classList.add("active");
+
+ const session=JSON.parse(localStorage.getItem("medika_session")||"null");
+ document.getElementById("md4CashierName").textContent=session?.name||"Kasir MEDIKA";
+
+ try{const latest=JSON.parse(localStorage.getItem("medika_products")||"null");if(Array.isArray(latest)&&latest.length)window.medikaProducts.splice(0,window.medikaProducts.length,...latest);}catch(e){}
+ md4Cart=[];
+ document.getElementById("md4Discount").value=0;
+ document.getElementById("md4Paid").value="";
+ md4RenderProducts();
+ md4RenderCart();
+ md4UpdateDashboard();
+ md4RenderRecent();
+ md4DrawChart();
+}
+
+/* PRODUK */
+function md4RenderProducts(){
+ const search=(document.getElementById("md4Search")?.value||"").toLowerCase();
+
+ const products=md4GetProducts().filter(p=>
+  p.active!==false &&
+  Number(p.stock||0)>0 &&
+  String(p.name||"").toLowerCase().includes(search)
+ );
+
+ const el=document.getElementById("md4Products");
+
+ el.innerHTML=products.map(p=>{
+  const fallback="https://placehold.co/500x420/f0f1ed/31533d?text=MEDIKA";
+  const photo=String(p.image||p.img||"").trim()||fallback;
+  return `
+  <div class="md4-product">
+   <div class="md4-product-photo"><img src="${photo}" alt="${String(p.name||"Produk").replace(/"/g,"&quot;")}" loading="lazy" referrerpolicy="no-referrer" onerror="this.onerror=null;this.src='${fallback}'"></div>
+   <div class="md4-product-info">
+    <b>${p.name||"Produk"}</b>
+    <small>Stok: ${p.stock||0}</small>
+    <strong>${md4Money(p.price)}</strong>
+    <button class="md4-btn small full" onclick="md4Add('${String(p.id).replace(/'/g,"")}')">+ Tambahkan</button>
+   </div>
+  </div>
+ `}).join("")||'<div class="md4-empty" style="grid-column:1/-1">Produk tidak tersedia.</div>';
+}
+
+function md4Add(id){
+ const p=md4GetProducts().find(x=>String(x.id)===String(id));
+ if(!p||Number(p.stock||0)<=0){alert("Stok produk kosong.");return;}
+
+ const item=md4Cart.find(x=>String(x.id)===String(id));
+ if(item){
+  if(item.qty>=Number(p.stock)){alert("Jumlah melebihi stok.");return;}
+  item.qty++;
+ }else{
+  md4Cart.push({
+   id:p.id,
+   name:p.name,
+   price:Number(p.price||0),
+   qty:1
+  });
+ }
+ md4RenderCart();
+}
+
+function md4ChangeQty(id,amount){
+ const item=md4Cart.find(x=>String(x.id)===String(id));
+ const p=md4GetProducts().find(x=>String(x.id)===String(id));
+ if(!item||!p)return;
+
+ const next=item.qty+amount;
+ if(next<=0){
+  md4Cart=md4Cart.filter(x=>String(x.id)!==String(id));
+ }else if(next>Number(p.stock||0)){
+  alert("Stok tidak mencukupi.");
+  return;
+ }else{
+  item.qty=next;
+ }
+ md4RenderCart();
+}
+
+function md4RenderCart(){
+ const el=document.getElementById("md4CartItems");
+
+ el.innerHTML=md4Cart.map(x=>`
+  <div class="md4-cart-line">
+   <div style="display:flex;justify-content:space-between;gap:8px">
+    <strong>${x.name}</strong>
+    <b style="font-size:12px">${md4Money(x.price*x.qty)}</b>
+   </div>
+   <div class="md4-qty">
+    <button onclick="md4ChangeQty('${x.id}',-1)">−</button>
+    <b>${x.qty}</b>
+    <button onclick="md4ChangeQty('${x.id}',1)">+</button>
+    <small>${md4Money(x.price)}</small>
+   </div>
+  </div>
+ `).join("")||'<div class="md4-empty">Belum ada produk.</div>';
+
+ md4UpdateTotal();
+}
+
+function md4Totals(){
+ const subtotal=md4Cart.reduce((s,x)=>s+x.price*x.qty,0);
+ const discount=Math.min(subtotal,Math.max(0,Number(document.getElementById("md4Discount").value||0)));
+ return {subtotal,discount,total:subtotal-discount};
+}
+
+function md4UpdateTotal(){
+ const t=md4Totals();
+ document.getElementById("md4Subtotal").textContent=md4Money(t.subtotal);
+ document.getElementById("md4DiscountText").textContent=md4Money(t.discount);
+ document.getElementById("md4GrandTotal").textContent=md4Money(t.total);
+
+ const paid=Number(document.getElementById("md4Paid").value||0);
+ document.getElementById("md4Change").textContent=md4Money(Math.max(0,paid-t.total));
+}
+
+function md4PaymentChange(){
+ const method=document.getElementById("md4Payment").value;
+ document.getElementById("md4CashArea").style.display=method==="Tunai"?"block":"none";
+}
+
+function md4ClearCart(){
+ if(!md4Cart.length)return;
+ if(!confirm("Kosongkan keranjang?"))return;
+
+ md4Cart=[];
+ document.getElementById("md4Discount").value=0;
+ document.getElementById("md4Paid").value="";
+ md4RenderCart();
+}
+
+/* SIMPAN TRANSAKSI */
+function md4CompleteTransaction(){
+ if(!md4Cart.length){
+  alert("Keranjang masih kosong.");
+  return;
+ }
+
+ const t=md4Totals();
+ if(t.total<=0){
+  alert("Total transaksi tidak valid.");
+  return;
+ }
+
+ const method=document.getElementById("md4Payment").value;
+ const paid=method==="Tunai"?Number(document.getElementById("md4Paid").value||0):t.total;
+
+ if(method==="Tunai"&&paid<t.total){
+  alert("Uang pembayaran belum mencukupi.");
+  return;
+ }
+
+ const products=md4GetProducts();
+
+ for(const item of md4Cart){
+  const p=products.find(x=>String(x.id)===String(item.id));
+  if(!p||Number(p.stock||0)<item.qty){
+   alert("Stok "+item.name+" tidak mencukupi. Periksa keranjang.");
+   return;
+  }
+ }
+
+ /* Kurangi stok */
+ md4Cart.forEach(item=>{
+  const p=products.find(x=>String(x.id)===String(item.id));
+  p.stock=Number(p.stock||0)-item.qty;
+ });
+
+ md4SaveProducts();
+
+ const now=new Date();
+ const session=JSON.parse(localStorage.getItem("medika_session")||"null");
+
+ const transaction={
+  id:"TRX"+Date.now(),
+  invoice:"MED-"+Date.now().toString().slice(-9),
+  date:now.toLocaleDateString("id-ID"),
+  time:now.toLocaleTimeString("id-ID",{hour:"2-digit",minute:"2-digit"}),
+  timestamp:now.getTime(),
+  cashier:session?.name||"Kasir",
+  items:md4Cart.map(x=>({...x})),
+  subtotal:t.subtotal,
+  discount:t.discount,
+  total:t.total,
+  payment:method,
+  paid:paid,
+  change:Math.max(0,paid-t.total)
+ };
+
+ const transactions=md4GetTransactions();
+ transactions.push(transaction);
+ md4SaveTransactions(transactions);
+
+ md4ShowReceipt(transaction);
+
+ md4Cart=[];
+ document.getElementById("md4Discount").value=0;
+ document.getElementById("md4Paid").value="";
+
+ md4RenderCart();
+ md4RenderProducts();
+ md4UpdateDashboard();
+ md4RenderRecent();
+ md4DrawChart();
+
+ if(typeof medikaRenderProducts==="function")medikaRenderProducts();
+}
+
+/* STRUK */
+function md4ShowReceipt(t){
+ document.getElementById("md4Receipt").innerHTML=`
+  <h2>MEDIKA</h2>
+  <p style="text-align:center;font-size:11px">APOTEK DIGITAL MEDIKA<br>Terima kasih telah berbelanja</p>
+  <hr>
+  <div class="md4-receipt-row"><span>Invoice</span><b>${t.invoice}</b></div>
+  <div class="md4-receipt-row"><span>Tanggal</span><span>${t.date}</span></div>
+  <div class="md4-receipt-row"><span>Waktu</span><span>${t.time}</span></div>
+  <div class="md4-receipt-row"><span>Kasir</span><span>${t.cashier}</span></div>
+  <hr>
+  ${t.items.map(x=>`
+   <div style="padding:5px 0;font-size:12px">
+    <b>${x.name}</b>
+    <div class="md4-receipt-row">
+     <span>${x.qty} x ${md4Money(x.price)}</span>
+     <span>${md4Money(x.price*x.qty)}</span>
+    </div>
+   </div>
+  `).join("")}
+  <hr>
+  <div class="md4-receipt-row"><span>Subtotal</span><b>${md4Money(t.subtotal)}</b></div>
+  <div class="md4-receipt-row"><span>Diskon</span><b>${md4Money(t.discount)}</b></div>
+  <div class="md4-receipt-row" style="font-size:15px"><b>TOTAL</b><b>${md4Money(t.total)}</b></div>
+  <div class="md4-receipt-row"><span>Pembayaran</span><span>${t.payment}</span></div>
+  <div class="md4-receipt-row"><span>Dibayar</span><span>${md4Money(t.paid)}</span></div>
+  <div class="md4-receipt-row"><span>Kembalian</span><b>${md4Money(t.change)}</b></div>
+  <hr>
+  <p style="text-align:center;font-size:11px">Terima kasih telah berbelanja di MEDIKA.</p>
+ `;
+
+ document.getElementById("md4ReceiptModal").classList.add("active");
+}
+
+/* DASHBOARD */
+function md4UpdateDashboard(){
+ const all=md4GetTransactions();
+ const today=new Date().toLocaleDateString("id-ID");
+ const list=all.filter(t=>t.date===today);
+
+ document.getElementById("md4Count").textContent=list.length;
+ document.getElementById("md4Sales").textContent=md4Money(list.reduce((s,t)=>s+Number(t.total||0),0));
+ document.getElementById("md4Items").textContent=list.reduce((s,t)=>s+(t.items||[]).reduce((a,x)=>a+Number(x.qty||0),0),0);
+ document.getElementById("md4Available").textContent=md4GetProducts().filter(p=>Number(p.stock||0)>0).length;
+}
+
+function md4RenderRecent(){
+ const list=md4GetTransactions().slice(-5).reverse();
+
+ document.getElementById("md4Recent").innerHTML=list.map(t=>`
+  <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 0;border-bottom:1px solid #eee">
+   <div><b style="font-size:12px">${t.invoice}</b><br><small class="md4-muted">${t.date} · ${t.time} · ${t.payment}</small></div>
+   <div style="text-align:right"><b>${md4Money(t.total)}</b><br><button class="md4-btn light small" onclick="md4Reprint('${t.id}')">Struk</button></div>
+  </div>
+ `).join("")||'<div class="md4-empty">Belum ada transaksi.</div>';
+}
+
+/* RIWAYAT TRANSAKSI */
+function md4OpenHistory(){
+ const list=md4GetTransactions().slice().reverse();
+
+ document.getElementById("md4HistoryContent").innerHTML=`
+  <div class="md4-table-wrap">
+   <table class="md4-table">
+    <thead><tr><th>Invoice</th><th>Tanggal</th><th>Kasir</th><th>Metode</th><th>Total</th><th>Struk</th></tr></thead>
+    <tbody>
+     ${list.map(t=>`
+      <tr>
+       <td>${t.invoice}</td>
+       <td>${t.date} ${t.time}</td>
+       <td>${t.cashier}</td>
+       <td>${t.payment}</td>
+       <td>${md4Money(t.total)}</td>
+       <td><button class="md4-btn light small" onclick="md4Reprint('${t.id}')">Lihat</button></td>
+      </tr>
+     `).join("")||'<tr><td colspan="6" class="md4-empty">Belum ada transaksi.</td></tr>'}
+    </tbody>
+   </table>
+  </div>
+ `;
+
+ document.getElementById("md4HistoryModal").classList.add("active");
+}
+
+function md4Reprint(id){
+ const t=md4GetTransactions().find(x=>String(x.id)===String(id));
+ if(t)md4ShowReceipt(t);
+}
+
+/* GRAFIK 7 HARI */
+function md4DrawChart(){
+ const canvas=document.getElementById("md4Chart");
+ if(!canvas)return;
+
+ const width=canvas.clientWidth||600;
+ const height=220;
+ const ratio=window.devicePixelRatio||1;
+ canvas.width=width*ratio;
+ canvas.height=height*ratio;
+
+ const ctx=canvas.getContext("2d");
+ ctx.scale(ratio,ratio);
+
+ const transactions=md4GetTransactions();
+ const days=[];
+
+ for(let i=6;i>=0;i--){
+  const d=new Date();
+  d.setDate(d.getDate()-i);
+  const label=d.toLocaleDateString("id-ID");
+  const total=transactions.filter(t=>t.date===label).reduce((s,t)=>s+Number(t.total||0),0);
+  days.push({label:d.toLocaleDateString("id-ID",{day:"2-digit",month:"short"}),total});
+ }
+
+ const max=Math.max(1,...days.map(d=>d.total));
+ const left=42,right=12,top=15,bottom=35;
+ const chartW=width-left-right;
+ const chartH=height-top-bottom;
+
+ ctx.clearRect(0,0,width,height);
+ ctx.font="10px Arial";
+ ctx.strokeStyle="#e7ebe4";
+ ctx.fillStyle="#829087";
+
+ for(let i=0;i<=4;i++){
+  const y=top+chartH*i/4;
+  ctx.beginPath();
+  ctx.moveTo(left,y);
+  ctx.lineTo(width-right,y);
+  ctx.stroke();
+ }
+
+ const step=chartW/7;
+
+ days.forEach((d,i)=>{
+  const barH=(d.total/max)*(chartH-8);
+  const x=left+i*step+step*.2;
+  const y=top+chartH-barH;
+
+  ctx.fillStyle="#b58a42";
+  ctx.beginPath();
+  ctx.roundRect(x,y,step*.6,Math.max(2,barH),5);
+  ctx.fill();
+
+  ctx.fillStyle="#718076";
+  ctx.textAlign="center";
+  ctx.fillText(d.label,x+step*.3,height-12);
+ });
+}
+
+/* KELUAR KASIR */
+function medikaCashierLogout(){
+ if(!confirm("Yakin ingin keluar dari akun kasir?"))return;
+
+ localStorage.removeItem("medika_session");
+ window.medikaSession=null;
+
+ md4Close("medikaCashierModal");
+ md4Close("md4ReceiptModal");
+ md4Close("md4HistoryModal");
+
+ if(typeof medikaUpdateAccount==="function")medikaUpdateAccount();
+}
+
+/* TOMBOL AKUN: ADMIN DAN KASIR */
+function medikaUpdateAccount(){
+ const session=JSON.parse(localStorage.getItem("medika_session")||"null");
+ const button=document.getElementById("navAccountButton");
+
+ if(!button)return;
+
+ if(session?.role==="admin"){
+  button.textContent="Dashboard Admin";
+  button.onclick=function(){medikaOpenAdmin()};
+ }else if(session?.role==="cashier"){
+  button.textContent="Dashboard Kasir";
+  button.onclick=function(){medikaOpenCashier()};
+ }else{
+  button.textContent="Akses Pengguna";
+  button.onclick=function(){medikaOpenStaffLogin()};
+ }
+}
+
+/* Hubungkan tombol akses dengan login staf dari Bagian 3 */
+window.openMedikaAccess=function(){
+ medikaOpenStaffLogin();
+};
+
+/* Pulihkan tombol setelah halaman dimuat */
+document.addEventListener("DOMContentLoaded",function(){
+ medikaUpdateAccount();
+});
+</script>
+
+<!-- AKHIR BAGIAN 4 -->
+
+
+<!-- =====================================================
+     MEDIKA — PATCH LOGIN PELANGGAN & CHECKOUT
+     Tempel setelah Bagian 4
+===================================================== -->
+
+<style>
+.medika-access-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:24px}
+.medika-access-card{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:10px;min-height:205px;padding:22px;border:1px solid #e1e7df;border-radius:18px;background:#fbfcf8;color:#203d2d;cursor:pointer;transition:.2s}
+.medika-access-card:hover{transform:translateY(-3px);border-color:#b58a42;box-shadow:0 12px 28px #173d2a12}
+.medika-access-card>span{font-size:28px;color:#b58a42}.medika-access-card strong{font-family:Georgia,serif;font-size:22px}.medika-access-card small{color:#718076;line-height:1.6;font-size:12px}.medika-access-card b{font-size:12px;color:#1d6847;margin-top:auto}
+.medika-access-home,.medika-staff-access{max-width:850px;margin:auto;padding:8px 0}
+@media(max-width:680px){.medika-access-grid{grid-template-columns:1fr}.medika-access-card{min-height:unset}}
+</style>
+<script>
+/* SINKRONISASI DATA PELANGGAN */
+function medikaSyncCustomerState() {
+    try {
+        const customers = JSON.parse(
+            localStorage.getItem("medika_customers") || "[]"
+        );
+
+        medikaCustomers = Array.isArray(customers) ? customers : [];
+
+        medikaSession = JSON.parse(
+            localStorage.getItem("medika_session") || "null"
+        );
+
+        medikaCart = JSON.parse(
+            localStorage.getItem("medika_cart") || "[]"
+        );
+    } catch (error) {
+        console.error("Gagal membaca data MEDIKA:", error);
+    }
+}
+
+/* PENYELESAIAN CHECKOUT SETELAH LOGIN */
+window.medikaCheckoutAfterLogin = false;
+
+function medikaContinueAfterLogin() {
+    if (window.medikaCheckoutAfterLogin) {
+        window.medikaCheckoutAfterLogin = false;
+
+        closeMedikaModal("medikaLoginModal");
+
+        medikaSyncCustomerState();
+
+        if (medikaCart.length) {
+            medikaRenderCheckout();
+            openMedikaModal("medikaCheckoutModal");
+        } else {
+            medikaToast("Keranjang masih kosong.");
+        }
+        return true;
+    }
+
+    return false;
+}
+
+/* REGISTER PELANGGAN */
+function medikaRegisterCustomer(event) {
+    event.preventDefault();
+
+    medikaSyncCustomerState();
+
+    const name = document.getElementById("medikaRegName").value.trim();
+    const email = document.getElementById("medikaRegEmail").value.trim().toLowerCase();
+    const phone = document.getElementById("medikaRegPhone").value.trim();
+    const password = document.getElementById("medikaRegPassword").value;
+
+    if (!name || !email || !phone || !password) {
+        medikaToast("Lengkapi semua data terlebih dahulu.");
+        return;
+    }
+
+    if (password.length < 6) {
+        medikaToast("Password minimal 6 karakter.");
+        return;
+    }
+
+    if (medikaCustomers.some(c => String(c.email || "").toLowerCase() === email)) {
+        medikaToast("Email sudah terdaftar. Silakan login.");
+        return;
+    }
+
+    const customer = {
+        id: Date.now(),
+        name: name,
+        email: email,
+        phone: phone,
+        password: password,
+        address: "",
+        role: "customer",
+        createdAt: new Date().toISOString()
+    };
+
+    medikaCustomers.push(customer);
+
+    localStorage.setItem(
+        "medika_customers",
+        JSON.stringify(medikaCustomers)
+    );
+
+    medikaSession = {
+        id: customer.id,
+        name: customer.name,
+        email: customer.email,
+        phone: customer.phone,
+        role: "customer"
+    };
+
+    localStorage.setItem(
+        "medika_session",
+        JSON.stringify(medikaSession)
+    );
+
+    medikaUpdateAccount();
+
+    if (!medikaContinueAfterLogin()) {
+        closeMedikaModal("medikaLoginModal");
+        medikaToast("Akun berhasil dibuat. Selamat datang, " + name + "!");
+        medikaShowCustomerMenu();
+    }
+}
+
+/* LOGIN PELANGGAN */
+function medikaLoginCustomer(event) {
+    event.preventDefault();
+
+    medikaSyncCustomerState();
+
+    const email = document.getElementById("medikaLoginEmail").value.trim().toLowerCase();
+    const password = document.getElementById("medikaLoginPassword").value;
+
+    const customer = medikaCustomers.find(c =>
+        String(c.email || "").toLowerCase() === email &&
+        String(c.password || "") === password
+    );
+
+    if (!customer) {
+        medikaToast("Akun tidak ditemukan atau password salah. Silakan daftar dahulu.");
+        return;
+    }
+
+    medikaSession = {
+        id: customer.id,
+        name: customer.name,
+        email: customer.email,
+        phone: customer.phone || "",
+        role: "customer"
+    };
+
+    localStorage.setItem(
+        "medika_session",
+        JSON.stringify(medikaSession)
+    );
+
+    medikaUpdateAccount();
+
+    if (!medikaContinueAfterLogin()) {
+        closeMedikaModal("medikaLoginModal");
+        medikaToast("Berhasil login. Selamat datang, " + customer.name + "!");
+        medikaShowCustomerMenu();
+    }
+}
+
+/* HALAMAN MENU PELANGGAN */
+function medikaShowCustomerMenu() {
+    medikaSyncCustomerState();
+
+    if (!medikaSession || medikaSession.role !== "customer") {
+        medikaShowLogin();
+        openMedikaModal("medikaLoginModal");
+        return;
+    }
+
+    document.getElementById("medikaLoginContent").innerHTML = `
+        <div class="medika-customer-home">
+          <p class="section-label">MEDIKA CUSTOMER AREA</p>
+          <h2 style="font-size:clamp(30px,4vw,46px);margin-top:12px">Halo, ${medikaSession.name}!</h2>
+          <p class="medika-muted">${medikaSession.email}</p>
+          <p style="margin-top:22px;line-height:1.8;color:#526258">
+            Selamat datang di halaman pelanggan MEDIKA. Kelola belanja, pesanan, dan wishlist kamu dari sini.
+          </p>
+          <div class="medika-customer-actions">
+            <button class="medika-customer-action" onclick="closeMedikaModal('medikaLoginModal');document.getElementById('products').scrollIntoView({behavior:'smooth'})">
+              <strong>🛍️ Belanja Produk</strong><span>Lihat katalog produk dan tambahkan barang ke keranjang.</span>
+            </button>
+            <button class="medika-customer-action" onclick="closeMedikaModal('medikaLoginModal');openCart()">
+              <strong>🛒 Keranjang Belanja</strong><span>Periksa produk yang akan kamu checkout.</span>
+            </button>
+            <button class="medika-customer-action" onclick="closeMedikaModal('medikaLoginModal');medikaOpenOrders()">
+              <strong>📦 Riwayat & Struk</strong><span>Lihat status pesanan dan cetak struk pembelian.</span>
+            </button>
+            <button class="medika-customer-action" onclick="closeMedikaModal('medikaLoginModal');medikaOpenWishlist()">
+              <strong>♡ Wishlist Saya</strong><span>Lihat produk yang kamu simpan.</span>
+            </button>
+            <button class="medika-customer-action" onclick="closeMedikaModal('medikaLoginModal');openConsultation()">
+              <strong>☎ Konsultasi</strong><span>Hubungi layanan MEDIKA melalui WhatsApp.</span>
+            </button>
+            <button class="medika-customer-action" onclick="medikaLogout()">
+              <strong>↪ Keluar Akun</strong><span>Akhiri sesi pelanggan di perangkat ini.</span>
+            </button>
+          </div>
+        </div>
+    `;
+
+    document.getElementById("medikaLoginModal")?.classList.add("customer-dashboard");
+    openMedikaModal("medikaLoginModal");
+}
+
+/* UPDATE TOMBOL AKUN */
+function medikaUpdateAccount() {
+    medikaSyncCustomerState();
+
+    const button = document.getElementById("navAccountButton");
+    if (!button) return;
+
+    if (medikaSession && medikaSession.role === "customer") {
+        button.textContent = "Hai, " + medikaSession.name.split(" ")[0];
+        button.onclick = medikaShowCustomerMenu;
+    } else if (medikaSession && medikaSession.role === "admin") {
+        button.textContent = "Admin";
+        button.onclick = function() {
+            if (typeof medikaOpenAdmin === "function") medikaOpenAdmin();
+        };
+    } else if (medikaSession && medikaSession.role === "cashier") {
+        button.textContent = "Kasir";
+        button.onclick = function() {
+            if (typeof medikaOpenCashier === "function") medikaOpenCashier();
+        };
+    } else {
+        button.textContent = "Akses Pengguna";
+        button.onclick = openMedikaAccess;
+    }
+}
+
+/* AKSES LOGIN STAFF TETAP TERSEDIA */
+function openMedikaAccess() {
+    medikaSyncCustomerState();
+    if (medikaSession && medikaSession.role === "customer") {
+        medikaShowCustomerMenu();
+        return;
+    }
+    medikaShowLogin();
+    openMedikaModal("medikaLoginModal");
+}
+
+/* LOGOUT PELANGGAN */
+function medikaLogout() {
+    medikaSession = null;
+    localStorage.removeItem("medika_session");
+
+    closeMedikaModal("medikaLoginModal");
+    medikaUpdateAccount();
+
+    medikaToast("Kamu berhasil keluar dari akun.");
+}
+
+/* CHECKOUT YANG SUDAH DIPERBAIKI */
+function medikaOpenCheckout() {
+    medikaSyncCustomerState();
+
+    if (!medikaCart.length) {
+        medikaToast("Keranjang masih kosong.");
+        return;
+    }
+
+    if (!medikaSession || medikaSession.role !== "customer") {
+        window.medikaCheckoutAfterLogin = true;
+
+        closeMedikaModal("medikaCartModal");
+        medikaShowLogin();
+        openMedikaModal("medikaLoginModal");
+
+        medikaToast("Login atau daftar dahulu untuk melanjutkan checkout.");
+        return;
+    }
+
+    medikaRenderCheckout();
+    closeMedikaModal("medikaCartModal");
+    openMedikaModal("medikaCheckoutModal");
+}
+
+/* SINKRONKAN DATA SAAT HALAMAN DIBUKA */
+medikaSyncCustomerState();
+medikaUpdateAccount();
+medikaUpdateCartCount();
+
+
+
+
+
+/* =====================================================
+   MEDIKA ACCESS TERPADU — SATU PINTU LOGIN
+===================================================== */
+function medikaShowAccessChooser(){
+ const modal=document.getElementById("medikaLoginModal");
+ modal?.classList.remove("customer-dashboard");
+ document.getElementById("medikaLoginContent").innerHTML=`
+  <div class="medika-access-home">
+   <p class="section-label">MEDIKA ACCOUNT CENTER</p>
+   <h2 style="font-size:clamp(30px,4vw,42px);margin:10px 0">Masuk ke MEDIKA</h2>
+   <p class="medika-muted" style="line-height:1.7;margin-bottom:24px">Pilih jenis akun untuk membuka halaman yang sesuai.</p>
+   <div class="medika-access-grid">
+    <button type="button" class="medika-access-card" onclick="medikaChooseAccess('customer')"><span>♙</span><strong>Pelanggan</strong><small>Belanja produk, checkout, dan lihat struk pesanan.</small><b>Masuk sebagai Pelanggan →</b></button>
+    <button type="button" class="medika-access-card" onclick="medikaChooseAccess('admin')"><span>▦</span><strong>Admin</strong><small>Kelola katalog, stok, kedaluwarsa, pesanan, dan laporan.</small><b>Masuk sebagai Admin →</b></button>
+    <button type="button" class="medika-access-card" onclick="medikaChooseAccess('cashier')"><span>▤</span><strong>Kasir</strong><small>Layani transaksi, cetak struk, dan lihat penjualan.</small><b>Masuk sebagai Kasir →</b></button>
+   </div>
+  </div>`;
+ openMedikaModal("medikaLoginModal");
+}
+function medikaChooseAccess(role){
+ const modal=document.getElementById("medikaLoginModal");
+ modal?.classList.remove("customer-dashboard");
+ if(role==="customer"){
+  medikaShowLogin();
+  openMedikaModal("medikaLoginModal");
+  return;
+ }
+ if(role!=="admin"&&role!=="cashier")return;
+ window.mdStaffRole=role;
+ const label=role==="admin"?"ADMINISTRATOR":"KASIR";
+ document.getElementById("medikaLoginContent").innerHTML=`
+  <div class="medika-staff-access">
+   <p class="section-label">MEDIKA ${label}</p>
+   <h2 style="font-size:32px;margin:10px 0">Login ${role==="admin"?"Admin":"Kasir"}</h2>
+   <p class="medika-muted">Masukkan akun ${role==="admin"?"administrator":"kasir"} untuk melanjutkan.</p>
+   <form class="medika-form" onsubmit="medikaStaffLogin(event)" style="margin-top:24px">
+    <div><label>Email</label><input id="mdStaffEmail" type="email" autocomplete="username" required placeholder="Masukkan email"></div>
+    <div><label>Password</label><input id="mdStaffPassword" type="password" autocomplete="current-password" required placeholder="Masukkan password"></div>
+    <p id="mdLoginError" style="color:#a43d35;font-size:13px;min-height:18px"></p>
+    <button class="medika-primary medika-full" type="submit">Masuk ke Dashboard ${role==="admin"?"Admin":"Kasir"}</button>
+   </form>
+   <button class="medika-switch" type="button" onclick="medikaShowAccessChooser()" style="margin-top:20px">← Kembali pilih jenis akun</button>
+  </div>`;
+ openMedikaModal("medikaLoginModal");
+}
+function openMedikaAccess(){
+ medikaSyncCustomerState();
+ if(medikaSession?.role==="customer"){
+  medikaShowCustomerMenu();
+  return;
+ }
+ if(medikaSession?.role==="admin"){
+  medikaOpenAdmin();
+  return;
+ }
+ if(medikaSession?.role==="cashier"){
+  medikaOpenCashier();
+  return;
+ }
+ medikaShowAccessChooser();
+}
+window.openMedikaAccess=openMedikaAccess;
+function medikaOpenStaffLogin(){medikaChooseAccess("admin");}
+function medikaStaffLogin(event){
+ event.preventDefault();
+ const role=window.mdStaffRole;
+ const email=document.getElementById("mdStaffEmail")?.value.trim().toLowerCase();
+ const password=document.getElementById("mdStaffPassword")?.value||"";
+ const accounts={
+  admin:{email:"admin@gmail.com",password:"admin123",name:"Administrator"},
+  cashier:{email:"kasir@gmail.com",password:"kasir123",name:"Kasir MEDIKA"}
+ };
+ const acc=accounts[role];
+ if(!acc||email!==acc.email||password!==acc.password){
+  const error=document.getElementById("mdLoginError");
+  if(error)error.textContent="Email atau password tidak sesuai. Coba periksa kembali.";
+  return;
+ }
+ window.medikaSession={id:role==="admin"?"staff-admin":"staff-cashier",name:acc.name,email:acc.email,role};
+ localStorage.setItem("medika_session",JSON.stringify(window.medikaSession));
+ medikaSession=window.medikaSession;
+ closeMedikaModal("medikaLoginModal");
+ medikaUpdateAccount();
+ if(role==="admin")medikaOpenAdmin();
+ else medikaOpenCashier();
+}
+function medikaShowLogin(){
+ document.getElementById("medikaLoginModal")?.classList.remove("customer-dashboard");
+ document.getElementById("medikaLoginContent").innerHTML=`
+  <h2>Login Pelanggan</h2>
+  <p class="medika-muted">Masuk untuk melanjutkan belanja dan melihat pesanan.</p>
+  <form class="medika-form" onsubmit="medikaLoginCustomer(event)">
+   <div><label>Email</label><input type="email" id="medikaLoginEmail" autocomplete="username" required placeholder="nama@email.com"></div>
+   <div><label>Password</label><input type="password" id="medikaLoginPassword" autocomplete="current-password" required placeholder="Masukkan password"></div>
+   <button class="medika-primary medika-full" type="submit">Masuk sebagai Pelanggan</button>
+  </form>
+  <p class="medika-muted" style="text-align:center;margin-top:18px">Belum punya akun? <button class="medika-switch" type="button" onclick="medikaShowRegister()">Daftar sekarang</button></p>
+  <p style="text-align:center;margin-top:18px"><button class="medika-switch" type="button" onclick="medikaShowAccessChooser()">← Kembali pilih jenis akun</button></p>`;
+}
+function medikaShowRegister(){
+ document.getElementById("medikaLoginModal")?.classList.remove("customer-dashboard");
+ document.getElementById("medikaLoginContent").innerHTML=`
+  <h2>Daftar Pelanggan</h2>
+  <p class="medika-muted">Buat akun agar pesanan dan struk tersimpan di halamanmu.</p>
+  <form class="medika-form" onsubmit="medikaRegisterCustomer(event)">
+   <div><label>Nama lengkap</label><input id="medikaRegName" required placeholder="Nama kamu"></div>
+   <div><label>Email</label><input type="email" id="medikaRegEmail" required placeholder="nama@email.com"></div>
+   <div><label>Nomor WhatsApp</label><input id="medikaRegPhone" required placeholder="08xxxxxxxxxx"></div>
+   <div><label>Password</label><input type="password" id="medikaRegPassword" minlength="6" required placeholder="Minimal 6 karakter"></div>
+   <button class="medika-primary medika-full" type="submit">Buat Akun Pelanggan</button>
+  </form>
+  <p class="medika-muted" style="text-align:center;margin-top:18px">Sudah punya akun? <button class="medika-switch" type="button" onclick="medikaShowLogin()">Login</button></p>
+  <p style="text-align:center;margin-top:14px"><button class="medika-switch" type="button" onclick="medikaShowAccessChooser()">← Kembali pilih jenis akun</button></p>`;
+}
+/* Foto kasir: gunakan foto produk yang sama, lalu coba beberapa foto Unsplash lain jika URL gagal. */
+const md4PhotoPool=[
+ "https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=700&q=85",
+ "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?auto=format&fit=crop&w=700&q=85",
+ "https://images.unsplash.com/photo-1611930022073-b7a4ba5fcccd?auto=format&fit=crop&w=700&q=85",
+ "https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?auto=format&fit=crop&w=700&q=85",
+ "https://images.unsplash.com/photo-1556228720-195a672e8a03?auto=format&fit=crop&w=700&q=85",
+ "https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&w=700&q=85",
+ "https://images.unsplash.com/photo-1584634731339-252c581abfc5?auto=format&fit=crop&w=700&q=85",
+ "https://images.unsplash.com/photo-1584744982491-665216d95f8b?auto=format&fit=crop&w=700&q=85"
+];
+function md4CashierImageFallback(img){
+ const tries=Number(img.dataset.try||0);
+ if(tries<md4PhotoPool.length){img.dataset.try=String(tries+1);img.src=md4PhotoPool[(tries+1)%md4PhotoPool.length];return;}
+ img.onerror=null;img.src="https://placehold.co/500x420/f0f1ed/31533d?text=MEDIKA";
+}
+function md4RenderProducts(){
+ const search=(document.getElementById("md4Search")?.value||"").toLowerCase();
+ const all=Array.isArray(window.medikaProducts)?window.medikaProducts:[];
+ const products=all.filter(p=>p.active!==false&&Number(p.stock||0)>0&&String(p.name||"").toLowerCase().includes(search));
+ const el=document.getElementById("md4Products");
+ if(!el)return;
+ el.innerHTML=products.map((p,index)=>{
+  const saved=String(p.image||p.img||"").trim();
+  const src=saved||md4PhotoPool[index%md4PhotoPool.length];
+  const safeName=String(p.name||"Produk").replace(/&/g,"&amp;").replace(/\"/g,"&quot;").replace(/</g,"&lt;");
+  const safeId=String(p.id).replace(/'/g,"\\'");
+  return `<div class="md4-product"><div class="md4-product-photo"><img src="${src}" alt="${safeName}" loading="lazy" referrerpolicy="no-referrer" data-try="0" onerror="md4CashierImageFallback(this)"></div><div class="md4-product-info"><b>${safeName}</b><small>Stok: ${p.stock||0}</small><strong>${md4Money(p.price)}</strong><button class="md4-btn small full" onclick="md4Add('${safeId}')">+ Tambahkan</button></div></div>`;
+ }).join("")||'<div class="md4-empty" style="grid-column:1/-1">Produk tidak tersedia.</div>';
+}
+/* TOMBOL AKUN SELALU MENGARAH KE AREA SESUAI PERAN */
+function medikaUpdateAccount(){
+ const button=document.getElementById("navAccountButton");
+ if(!button)return;
+ let session=null;
+ try{session=JSON.parse(localStorage.getItem("medika_session")||"null");}catch(e){}
+ if(session?.role==="customer"){
+  medikaSession=session;button.textContent="Hai, "+(session.name||"Pelanggan").split(" ")[0];button.onclick=medikaShowCustomerMenu;
+ }else if(session?.role==="admin"){
+  medikaSession=session;button.textContent="Dashboard Admin";button.onclick=medikaOpenAdmin;
+ }else if(session?.role==="cashier"){
+  medikaSession=session;button.textContent="Dashboard Kasir";button.onclick=medikaOpenCashier;
+ }else{
+  medikaSession=null;button.textContent="Akses Pengguna";button.onclick=openMedikaAccess;
+ }
+}
+/* Tambahkan cetak struk langsung setelah pesanan berhasil dibuat. */
+
+</script>
+
+</body>
+</html>
